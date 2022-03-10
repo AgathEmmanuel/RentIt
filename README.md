@@ -1,1 +1,4 @@
 # RentIt
+
+
+A Renting platform
