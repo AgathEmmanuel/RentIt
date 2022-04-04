@@ -96,11 +96,15 @@ Communication between services
   	      |__  service C
 
 
+
+
+
 - async  [ services communicate with each other using events ]
 
 Two ways to do async
    => using async to get instant output of request of a service from other requests via event bus
    => updating databases of all individual services using event bus when a service updates its db basically data duplication across service dbs
+
 
   service A <-> ||
   	        ||
@@ -109,3 +113,15 @@ Two ways to do async
   service C     ||
                 ||
   service Z <-> ||
+
+
+
+
+
+
+> Services
+
+Sign up a User
+List Products  
+Buy Products  
+Products taken by a User
