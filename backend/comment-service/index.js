@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto')
+const cors = require('cors');
 
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 
 /*
@@ -17,7 +19,15 @@ id => postId
 
 */
 
-const commentsForPostId={};
+const commentsForPostId={
+    "11":
+    [
+        {
+        "id": "11111",
+        "content": "adding comment2 to 11"
+        }
+    ]
+};
 // 
 
 app.post('/post/:id/comment',(req,res) => {
@@ -31,7 +41,7 @@ app.post('/post/:id/comment',(req,res) => {
 
 
 app.get('/post/:id/comment',(req,res) => {
-    res.send(commentsForPostId[req.params.id] || []);
+    res.send(commentsForPostId[req.params.id] || [{"id":"12","content":"Keep it up"},{"id":"13","content":"Good work"} ]);
 });
 
 app.listen(4001,() => {

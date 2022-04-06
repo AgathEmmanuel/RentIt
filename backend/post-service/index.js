@@ -2,9 +2,11 @@
 const express = require('express');
 const { randomBytes } = require('crypto');
 const bodyParser = require('body-parser')
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 
 /*
@@ -15,19 +17,23 @@ app.use(bodyParser.json());
 
 */
 
-const post = {};
+const posts = {
+    "11":{
+    "postId": "11",
+    "title": "dummy post"}
+};
 
 
 app.get('/post',(req,res) => {
-    res.send(post);
+    res.send(posts);
 
 });
 
 app.post('/post',(req,res) => {
     const postId = randomBytes(4).toString('hex');
     const { title } = req.body;
-    post[postId]= { postId, title };
-    res.status(201).send(post[postId]);
+    posts[postId]= { postId, title };
+    res.status(201).send(posts[postId]);
 });
 
 

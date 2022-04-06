@@ -72,6 +72,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
+
+
+
 # Steps  
 ```
 
@@ -83,6 +86,45 @@ nvm use v16.14.2
 
 npx create-react app rentit-client
 
+npm install axios
+
+
+
+
+
+====== frontend components  
+
+create post  [ text input ]
+
+[
+post ui  [ content ]
+comment on post  [ text input ]
+comment ui for a post  [ content ]
+]
+
+
+App
+--- PostCreate
+--- PostList
+
+------ Post
+------------ PostContent 
+----------------- PostHead
+----------------- PostDescription
+------------ Comment
+----------------- CommentCreate
+----------------- CommentList
+
+
 
 
 ```
+
+
+
+# Links  
+
+[https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis)  
+[https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook](https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook)  
+[https://medium.com/@s.alexis/using-react-router-useparams-to-fetch-data-dynamically-13288e24ed1](https://medium.com/@s.alexis/using-react-router-useparams-to-fetch-data-dynamically-13288e24ed1)  
+[https://stackoverflow.com/questions/44617825/passing-headers-with-axios-post-request](https://stackoverflow.com/questions/44617825/passing-headers-with-axios-post-request)  
