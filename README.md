@@ -9,6 +9,12 @@ A Renting platform
 
 
 
+# Features  
+
+- Post products for rent  
+- Give comments on Products  
+- Distributed transactions  
+- Currency conversion  
 
 
 
