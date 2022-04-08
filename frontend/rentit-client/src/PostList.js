@@ -8,7 +8,7 @@ import CommentList from "./CommentList";
 const PostList = () => {
     const [posts,setPosts]=useState({});
     const getPosts = async () => {
-        const response = await axios.get('http://localhost:4000/post');
+        const response = await axios.get('http://localhost:4002/post');
         setPosts(response.data);
     };
     useEffect(() => {
@@ -26,7 +26,8 @@ const PostList = () => {
                     <h3>{post.postId}</h3>
                     
                     <CommentCreate propPostId={post.postId} />
-                    <CommentList propPostId={post.postId} />
+                    <CommentList commentsList={post.comments} /> 
+                    {/* <CommentList propPostId={post.postId} /> */}
                 </div>
         </div>
         )

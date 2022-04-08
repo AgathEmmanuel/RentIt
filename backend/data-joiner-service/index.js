@@ -19,7 +19,7 @@ const postWithComments = {
 
 
 
-app.get("/posts", (req, res) => {
+app.get("/post", (req, res) => {
     res.send(postWithComments)
 });
 

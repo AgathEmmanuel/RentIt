@@ -1,11 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from 'axios';
+//import { useState, useEffect } from "react";
+//import axios from 'axios';
 import './CommentList.css'
 
 
 
-const CommentList = ({propPostId}) => {
+const CommentList = ({commentsList}) => {
+    console.log(commentsList)
+    /*
     const [commentsList,setCommentsList]=useState([]);
     const getComments = async () => {
         const response = await axios.get(`http://localhost:4001/post/${propPostId}/comment`);
@@ -27,11 +29,12 @@ const CommentList = ({propPostId}) => {
            // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     //console.log(commentsList)
+    */
     const showComments = commentsList.map( comment => {
         return (
             <div 
             className="comment-container"
-            key={comment.id}
+            key={comment.commentId}
             >
                 <div className="comment-body">
                     <h3>comment: {comment.content}</h3>

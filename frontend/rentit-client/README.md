@@ -128,3 +128,5 @@ App
 [https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook](https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook)  
 [https://medium.com/@s.alexis/using-react-router-useparams-to-fetch-data-dynamically-13288e24ed1](https://medium.com/@s.alexis/using-react-router-useparams-to-fetch-data-dynamically-13288e24ed1)  
 [https://stackoverflow.com/questions/44617825/passing-headers-with-axios-post-request](https://stackoverflow.com/questions/44617825/passing-headers-with-axios-post-request)  
+
+[https://medium.com/swlh/avoid-prop-drilling-with-react-context-a00392ee3d8](https://medium.com/swlh/avoid-prop-drilling-with-react-context-a00392ee3d8)  
