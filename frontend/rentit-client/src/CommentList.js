@@ -31,13 +31,23 @@ const CommentList = ({commentsList}) => {
     //console.log(commentsList)
     */
     const showComments = commentsList.map( comment => {
+        let censoredContent
+        if (comment.censorStatus === 'approved') {
+            censoredContent = comment.content;
+        }
+        if (comment.censorStatus === 'pending') {
+            censoredContent = "Comment is getting censored";
+        }
+        if (comment.censorStatus === 'rejected') {
+            censoredContent = "Comment got censored out";
+        }
         return (
             <div 
             className="comment-container"
             key={comment.commentId}
             >
                 <div className="comment-body">
-                    <h3>comment: {comment.content}</h3>
+                    <h3>comment: {censoredContent}</h3>
                 </div>
             </div>
         )
