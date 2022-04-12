@@ -30,10 +30,20 @@ app.post("/events", (req, res) => {
         postWithComments[postId]= { postId, title, comments: []};
     }
     if (type === 'CommentCreationEvent') {
-        const { postId, commentId, content } = data;
-        postWithComments[postId].comments.push({commentId,content})
+        const { postId, commentId, content, censorStatus } = data;
+        postWithComments[postId].comments.push({commentId,content,censorStatus})
     }
     console.log(postWithComments)
+    if (type === 'CommentUpdationEvent') {
+        const { postId,commentId,content,censorStatus } = data;
+        const post = postWithComments[postId];
+        const comment = post.comments.find(comment => {
+            return comment.commentId === commentId;
+        });
+        comment.censorStatus=censorStatus;
+
+        }
+
     res.send({});
 });
 
