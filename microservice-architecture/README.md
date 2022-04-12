@@ -129,3 +129,27 @@ Sign up a User
 List Products  
 Buy Products  
 Products taken by a User
+
+
+
+
+```
+RabbitMQ vs. Kafka architecture
+RabbitMQ vs. Kafka performance
+RabbitMQ vs. Kafka message retention
+RabbitMQ vs. Kafka message routing
+RabbitMQ vs. Kafka monitoring
+RabbitMQ vs. Kafka consumer modes
+RabbitMQ vs. Kafka consumer modes
+RabbitMQ vs. Kafka topology
+
+```
+
+# Links  
+
+
+[https://developer.ibm.com/patterns/create-a-progressive-web-application-for-offline-image-classification/](https://developer.ibm.com/patterns/create-a-progressive-web-application-for-offline-image-classification/)  
+[https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/](https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/)  
+
+
+

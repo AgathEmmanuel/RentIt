@@ -15,6 +15,8 @@ A Renting platform
 - Give comments on Products  
 - Distributed transactions  
 - Currency conversion  
+- Invoice generator  
+- Printing service  
 
 
 
@@ -38,4 +40,3 @@ A Renting platform
 # Links  
 
 
-- [https://developer.ibm.com/patterns/create-a-progressive-web-application-for-offline-image-classification/](https://developer.ibm.com/patterns/create-a-progressive-web-application-for-offline-image-classification/)  
