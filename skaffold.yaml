@@ -7,11 +7,9 @@ build:
     push: false
   artifacts:
   - image: rentit/auth
-    custom:
-      buildCommand: ./build.sh
-      dependencies:
-        paths:
-        - ./backend/auth-service
+    context: backend/auth-service
+    docker:
+      dockerfile: Dockerfile
     sync:
       manual:
         - src: "src/**/*.ts"
