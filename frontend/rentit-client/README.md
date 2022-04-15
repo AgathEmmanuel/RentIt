@@ -119,6 +119,7 @@ App
 
 
 ```
+```
 
 
 
@@ -130,3 +131,4 @@ App
 [https://stackoverflow.com/questions/44617825/passing-headers-with-axios-post-request](https://stackoverflow.com/questions/44617825/passing-headers-with-axios-post-request)  
 
 [https://medium.com/swlh/avoid-prop-drilling-with-react-context-a00392ee3d8](https://medium.com/swlh/avoid-prop-drilling-with-react-context-a00392ee3d8)  
+[https://reactjs.org/docs/static-type-checking.html](https://reactjs.org/docs/static-type-checking.html)  

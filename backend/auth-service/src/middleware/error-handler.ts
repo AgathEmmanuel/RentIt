@@ -1,0 +1,36 @@
+import { Request, Response, NextFunction } from "express";
+import { RequestValidationError } from "../error/request-validation-error";
+import { DatabaseConnectonError } from "../error/database-connection-error";
+
+export const errorHandler = (
+  err: Error,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+
+  // a common  response structure
+  // all error responses send from any server should have this same structure
+  // { errors: { message: string, field?:string }[] }
+
+  if (err instanceof RequestValidationError) {
+      const formattedErrors = err.errors.map(error => {
+          return { message: error.msg, field: error.param }
+      });
+      return res.status(400).send({ errors: formattedErrors });
+      //console.log("errror is handled as RequestValidation error")
+  }
+
+  if (err instanceof DatabaseConnectonError) {
+      return res.status(500).send({ errors: [{ message: err.issue }]
+        });
+      //console.log("errror is handled as DB connection error")
+  }
+  //console.log("error-handler Error loggggggg ", err);
+  res.status(400).send({
+    errors: [{ message: 'Somethin went wrong'}]
+    //message: err.message
+
+    //message: "error-handler constant Errorr",
+  });
+};
