@@ -57,6 +57,16 @@ Async/await error handling support for express js
 
 npm install express-async-errors
 
+
+
+Adding mongoose to connect with mongodb
+
+npm install mongoose
+
+if typescript shows any error, to solve that install this:
+npm install @types/mongoose
+
+
 ```
 
 
