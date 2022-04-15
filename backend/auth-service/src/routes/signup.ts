@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/api/user/signup", [
     body('email').isEmail().withMessage("Email provided is not valid"),
     body('password').trim().isLength({ min:5, max:10 }).withMessage("Password must be >4 and <10")
-],(req: Request,res: Response) => {
+],async(req: Request,res: Response) => {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
