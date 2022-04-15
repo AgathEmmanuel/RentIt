@@ -16,13 +16,13 @@ app.use(currentUserRouter);
 app.use(signInRouter);
 app.use(signOutRouter);
 app.use(signUpRouter);
+app.all('*',async(req,res,next) => {
+    next(new routeNotFoundError());
+})
+/*
 app.get('*',() => {
     throw new routeNotFoundError();
 })
-app.post('*',() => {
-    throw new routeNotFoundError();
-})
-/*
 app.all('*',() => {
     throw new routeNotFoundError();
 })
