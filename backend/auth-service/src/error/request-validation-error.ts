@@ -1,9 +1,10 @@
+import { CustomStandardError } from "./custom-standard-error";
 import { ValidationError } from "express-validator";
-import { StandardErrorFormat } from "./errorInterface";
-export class RequestValidationError extends Error implements StandardErrorFormat{
+
+export class RequestValidationError extends CustomStandardError {
   httpStatusCode = 400;
     constructor(public errors: ValidationError[]) {
-        super();
+        super('Requsted parameters are invalid');
 
         Object.setPrototypeOf(this, RequestValidationError.prototype);
     }
