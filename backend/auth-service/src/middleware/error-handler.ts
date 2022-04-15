@@ -14,15 +14,19 @@ export const errorHandler = (
   // { errors: { message: string, field?:string }[] }
 
   if (err instanceof RequestValidationError) {
+      return res.status(err.httpStatusCode).send({ errors: err.formatErrors() });
+      /*
       const formattedErrors = err.errors.map(error => {
           return { message: error.msg, field: error.param }
       });
       return res.status(400).send({ errors: formattedErrors });
+      */
+
       //console.log("errror is handled as RequestValidation error")
   }
 
   if (err instanceof DatabaseConnectonError) {
-      return res.status(500).send({ errors: [{ message: err.issue }]
+      return res.status(err.httpStatusCode).send({ errors: err.formatErrors()
         });
       //console.log("errror is handled as DB connection error")
   }
