@@ -6,7 +6,7 @@ app.use(json());
 
 
 app.get('/api/users/currentuser',(req,res)=>{
-    res.send("Helloo");
+    res.send("Helloo fools");
 
 });
 app.listen(3000, () => {

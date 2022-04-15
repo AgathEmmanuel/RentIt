@@ -1,0 +1,21 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+
+
+build:
+  googleCloudBuild:
+    projectId: < random project id assigned by gcp for your project >
+  artifacts:
+  - image: us.gcr.io/< projectId >/rentit-auth
+    context: backend/auth-service
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+        - src: "src/**/*.ts"
+          dest: .
+
+deploy:
+  kubectl:
+    manifests:
+    - ./operations/k8s/cloud-dev/auth-deploy.yaml
