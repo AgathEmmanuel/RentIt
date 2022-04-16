@@ -40,6 +40,7 @@ npm init -y
 npm install express cors axios nodemon
 
 
+--------- for auth
 
 # for typescript env setup
 
