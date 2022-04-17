@@ -68,6 +68,13 @@ if typescript shows any error, to solve that install this:
 npm install @types/mongoose
 
 
+
+
+Adding jwt toking support  
+
+npm install jsonwebtoken @types/jsonwebtoken  
+
+
 ```
 
 
@@ -79,3 +86,7 @@ npm install @types/mongoose
 [https://httptoolkit.tech/blog/http-api-problem-details/](https://httptoolkit.tech/blog/http-api-problem-details/)  
 [https://en.wikipedia.org/wiki/List_of_HTTP_status_codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)  
 [https://www.npmjs.com/package/express-async-errors](https://www.npmjs.com/package/express-async-errors)  
+[https://www.base64decode.org/](https://www.base64decode.org/)  
+[https://jwt.io/](https://jwt.io/)  
+[https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client](https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client)  
+

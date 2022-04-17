@@ -132,3 +132,5 @@ App
 
 [https://medium.com/swlh/avoid-prop-drilling-with-react-context-a00392ee3d8](https://medium.com/swlh/avoid-prop-drilling-with-react-context-a00392ee3d8)  
 [https://reactjs.org/docs/static-type-checking.html](https://reactjs.org/docs/static-type-checking.html)  
+[https://stackoverflow.com/questions/50288599/how-to-redirect-user-to-another-page-after-login-that-base-on-jwt-token](https://stackoverflow.com/questions/50288599/how-to-redirect-user-to-another-page-after-login-that-base-on-jwt-token)  
+
