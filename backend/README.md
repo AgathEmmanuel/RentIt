@@ -91,6 +91,32 @@ kubectl create secret generic jwt-secret --from-literal=JWT_SECRET_KEY=secretpri
 
 
 
+
+
+
+----------  How to watch and reload ts-node when TypeScript files change
+
+
+nodemon --watch "src/**" --ext "ts,json" --ignore "src/**/*.spec.ts" --exec "ts-node src/index.ts"
+
+Or create a nodemon.json file with the following content:
+
+{
+  "watch": ["src"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "ts-node ./src/index.ts"      // or "npx ts-node src/index.ts"
+}
+
+and then run nodemon with no arguments.
+
+By virtue of doing this, you'll be able to live-reload a ts-node process without having to worry about the underlying implementation.
+
+
+
+
+
+
 ```
 
 
@@ -107,4 +133,7 @@ kubectl create secret generic jwt-secret --from-literal=JWT_SECRET_KEY=secretpri
 [https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client](https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client)  
 [https://www.npmjs.com/package/cookie-session](https://www.npmjs.com/package/cookie-session)  
 [http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)  
+[https://stackoverflow.com/questions/37979489/how-to-watch-and-reload-ts-node-when-typescript-files-change](https://stackoverflow.com/questions/37979489/how-to-watch-and-reload-ts-node-when-typescript-files-change)  
+[https://stackoverflow.com/questions/64831173/skaffold-is-not-detecting-js-file-changes](https://stackoverflow.com/questions/64831173/skaffold-is-not-detecting-js-file-changes)  
+[https://www.querythreads.com/how-to-watch-and-reload-ts-node-when-type-script-files-change/](https://www.querythreads.com/how-to-watch-and-reload-ts-node-when-type-script-files-change/)  
 

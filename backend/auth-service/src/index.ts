@@ -64,6 +64,7 @@ const authStart = async () => {
     console.error(err);
     }
     app.listen(3000, () => {
+        console.log('I am up.....')
         console.log('Listeningggg on port 3000');
     });
 }

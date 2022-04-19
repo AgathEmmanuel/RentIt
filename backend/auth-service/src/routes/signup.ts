@@ -1,17 +1,20 @@
 import express, { Request, Response } from "express";
-import { body, validationResult } from 'express-validator';
-import { RequestValidationError } from "../error/request-validation-error";
+import { body } from 'express-validator';
+// import { validationResult } from 'express-validator';
+// import { RequestValidationError } from "../error/request-validation-error";
 import { DatabaseConnectonError } from "../error/database-connection-error";
 import { User } from "../models/user";
 import { ExistingUserError } from "../error/existing-user-error";
 import jwt from "jsonwebtoken";
+import { requestValidater } from "../middleware/request-validater";
 
 const router = express.Router();
 
 router.post("/api/user/signup", [
     body('email').isEmail().withMessage("Email provided is not valid"),
     body('password').trim().isLength({ min:5, max:10 }).withMessage("Password must be >4 and <10")
-],async(req: Request,res: Response) => {
+],requestValidater,async(req: Request,res: Response) => {
+    /*
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
@@ -19,6 +22,8 @@ router.post("/api/user/signup", [
         //throw new Error('Email, password Invalid');
         //return res.status(400).send(errors.array());
     }
+    */
+    // removing error validation inside the function and instead passing it as a middleware
     const { email, password } = req.body;
 
 
