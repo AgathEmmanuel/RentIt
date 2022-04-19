@@ -75,6 +75,22 @@ Adding jwt toking support
 npm install jsonwebtoken @types/jsonwebtoken  
 
 
+
+
+Adding session support
+
+npm install cookie-session @types/cookie-session 
+
+
+
+Creating a secret for jwt  
+
+kubectl create secret generic jwt-secret --from-literal=JWT_SECRET_KEY=secretprivatekey
+
+
+
+
+
 ```
 
 
@@ -89,4 +105,6 @@ npm install jsonwebtoken @types/jsonwebtoken
 [https://www.base64decode.org/](https://www.base64decode.org/)  
 [https://jwt.io/](https://jwt.io/)  
 [https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client](https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client)  
+[https://www.npmjs.com/package/cookie-session](https://www.npmjs.com/package/cookie-session)  
+[http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)  
 
