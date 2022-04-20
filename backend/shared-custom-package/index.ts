@@ -6,10 +6,10 @@ interface FruitCount {
 }
 
 const bucket1Count: FruitCount = {
-  apple: 12,
-  orange: 10,
-  grapes: 2,
-  cherry: 9,
+  apple: 120,
+  orange: 90,
+  grapes: 20,
+  cherry: 90,
 };
 
 console.log(bucket1Count);

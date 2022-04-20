@@ -6,7 +6,8 @@
   "types": "./build/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc",
-    "clean": "del ./build/*"
+    "clean": "del ./build/*",
+    "pubpack": "git add . && git commit -m \"Updating the shared custom pakage\" && npm version patch && npm run build"
   },
   "files": [
     "build/**/*"
