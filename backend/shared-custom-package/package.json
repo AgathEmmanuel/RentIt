@@ -1,9 +1,9 @@
 {
   "name": "@rentit/shared-custom-package",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
-  "main": "./build/src/index.js",
-  "types": "./build/src/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "del ./build/*",
