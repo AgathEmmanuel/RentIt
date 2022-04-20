@@ -1,13 +1,13 @@
 {
   "name": "@rentit/shared-custom-package",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "del ./build/*",
-    "pubpack": "git add . && git commit -m \"Updating the shared custom pakage\" && npm version patch && npm run build"
+    "pubpack": "git add . && git commit -m \"Updating the shared custom pakage\" && npm version patch && npm run build && npm publish"
   },
   "files": [
     "build/**/*"
