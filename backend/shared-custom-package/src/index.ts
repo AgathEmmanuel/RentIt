@@ -1,4 +1,3 @@
-export * from "./error/route-not-found-error";
 export * from "./error/custom-standard-error";
 export * from "./error/not-loggedin-error";
 export * from "./error/database-connection-error";
