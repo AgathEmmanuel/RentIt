@@ -1,0 +1,20 @@
+{
+  "name": "@rentit/shared-custom-package",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "del ./build/*"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^4.0.1",
+    "typescript": "^4.6.3"
+  }
+}
