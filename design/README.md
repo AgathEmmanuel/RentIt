@@ -139,3 +139,13 @@ Products taken by a User
 - Test how different pieces of code work together  
 - Test how different component programs work together  
 - Test how different microservices work  
+- Test basic request handling  
+- Test functionality of models  
+- Test incoming and outgoing events  
+- Test can be done from local development environment  
+
+> Testing frameworks: Jest, pyTest  
+
+
+
+

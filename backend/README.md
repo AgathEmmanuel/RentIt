@@ -194,6 +194,38 @@ npm list -g
 @saltire sorry for the confusion, we need to update the docs to clarify that npm update will install & update the package-lock.json but not modify the spec defined in package.json; As you noted, you can still update that by running npm install <pkg>@<version> - this was a breaking change from v6, as that previously would modify package.json
 
 
+-------------- testing  
+
+https://www.npmjs.com/package/supertest
+
+
+npm run test  
+Jest  
+
+Start in-memory copy of mongodb  
+start up express app  
+use supertest library to make fake requests to express app  
+run assertions to make sure the request did the right thing  
+
+
+test dependencies should be installed only as development depnendencies  
+
+npm install --save-dev @types/jest @types/supertest jest ts-jest supertest mongodb-memory-server  
+
+RUN npm install --only-prod  
+
+
+"test": "jest --watchAll --no-cache"
+
+
+https://nodkz.github.io/mongodb-memory-server/docs/guides/migration/migrate7/#no-function-other-than-start-create-ensureinstance-will-be-starting-anything
+
+
+
+
+
+
+
 
 ```
 
