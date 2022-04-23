@@ -2,11 +2,14 @@ import express, { Request, Response } from "express";
 import { body } from 'express-validator';
 // import { validationResult } from 'express-validator';
 // import { RequestValidationError } from "../error/request-validation-error";
-import { DatabaseConnectonError } from "../error/database-connection-error";
+//import { DatabaseConnectonError } from "../error/database-connection-error";
+import { DatabaseConnectonError } from "@rentit/shared-custom-package";
 import { User } from "../models/user";
-import { ExistingUserError } from "../error/existing-user-error";
+//import { ExistingUserError } from "../error/existing-user-error";
+import { ExistingUserError } from "@rentit/shared-custom-package";
 import jwt from "jsonwebtoken";
-import { requestValidater } from "../middleware/request-validater";
+//import { requestValidater } from "../middleware/request-validater";
+import { requestValidater } from "@rentit/shared-custom-package";
 
 const router = express.Router();
 

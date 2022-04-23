@@ -9,8 +9,10 @@ import { signInRouter } from './routes/signin';
 import { signOutRouter } from './routes/signout';
 import { signUpRouter } from './routes/signup';
 
-import { errorHandler } from './middleware/error-handler';
-import { routeNotFoundError } from './error/route-not-found-error';
+//import { errorHandler } from './middleware/error-handler';
+//import { routeNotFoundError } from './error/route-not-found-error';
+import { errorHandler } from '@rentit/shared-custom-package';
+import { routeNotFoundError } from '@rentit/shared-custom-package';
 
 const app = express();
 app.set('trust proxy', 1);
@@ -56,9 +58,14 @@ const authStart = async () => {
     }else {
         console.log("Secret Environmental variable available")
     }
+    if (!process.env.MONGO_DB_URL) {
+        throw new Error('MONGO_DB_URL in not availble as env variable')
+    }else {
+        console.log("Auth Mongodb url variable available")
+    }
 
     try {
-    await mongoose.connect('mongodb://auth-mongodb-service:27017/auth');
+    await mongoose.connect(process.env.MONGO_DB_URL);
     console.log('Connected to MongoDb')
 } catch (err) {
     console.error(err);

@@ -50,6 +50,7 @@ npm install typescript -g
 
 
 tsc --init		# to create a ts config file  
+
 ts-node-dev index.ts	# to run the application  
 
 
@@ -91,6 +92,11 @@ kubectl create secret generic jwt-secret --from-literal=JWT_SECRET_KEY=secretpri
 
 
 
+-------- communication between namespaces  
+
+http://NAME-OF-SERVICE.NAMESPACE.svc.cluster.local  
+
+
 
 
 
@@ -114,6 +120,78 @@ By virtue of doing this, you'll be able to live-reload a ts-node process without
 
 
 
+---------  for testing  
+
+npm install --save-dev @types/jest @types/supertest jest ts-jest supertest mongodb-memory-server  
+
+NOTE: this will be installed only as developement dependencies and need not be available in building the container  
+
+and in Dockerfile you can edit the RUN command as
+
+RUN npm install --only=prod		# to install only prod dependencies  
+
+and add in scripts
+
+"scripts": {
+	"test": "jest --watchAll --no-cache"
+},
+
+
+
+
+------------- publishing custom package to npm  
+
+npm init  
+
+npm publish --access public
+
+
+
+------------- typescript to javascript conversion  
+
+npm install typescript del-cli --save-dev  
+
+in package.json
+
+"build": tsc
+
+tsc -- init
+
+in tsconfig.json  
+
+uncomment  
+
+"declaration": true,
+"outDir": "./build"
+
+
+
+------------ to push latest updates to npm pacage
+
+npm version patch
+
+or change the version no and push  
+
+npm run build
+
+npm publish
+
+
+npm install express express-validator cookie-session jsonwebtoken @types/express @types/cookie-session @types/jsonwebtoken
+
+
+
+npm update @rentit/shared-custom-package
+
+
+npm view @rentit/shared-custom-package version --json  #to view available version
+npm view @rentit/shared-custom-package versions --json  #to view available version
+
+npm list 		# to list local packages with version
+npm list -g
+
+
+@saltire sorry for the confusion, we need to update the docs to clarify that npm update will install & update the package-lock.json but not modify the spec defined in package.json; As you noted, you can still update that by running npm install <pkg>@<version> - this was a breaking change from v6, as that previously would modify package.json
 
 
 
@@ -136,4 +214,6 @@ By virtue of doing this, you'll be able to live-reload a ts-node process without
 [https://stackoverflow.com/questions/37979489/how-to-watch-and-reload-ts-node-when-typescript-files-change](https://stackoverflow.com/questions/37979489/how-to-watch-and-reload-ts-node-when-typescript-files-change)  
 [https://stackoverflow.com/questions/64831173/skaffold-is-not-detecting-js-file-changes](https://stackoverflow.com/questions/64831173/skaffold-is-not-detecting-js-file-changes)  
 [https://www.querythreads.com/how-to-watch-and-reload-ts-node-when-type-script-files-change/](https://www.querythreads.com/how-to-watch-and-reload-ts-node-when-type-script-files-change/)  
+[https://docs.nats.io/](https://docs.nats.io/)  
+[https://docs.nats.io/running-a-nats-service/nats-kubernetes/basic-nats-and-nats-streaming-setup](https://docs.nats.io/running-a-nats-service/nats-kubernetes/basic-nats-and-nats-streaming-setup)  
 

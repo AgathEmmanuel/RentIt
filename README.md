@@ -50,6 +50,32 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - payment-service  
 - auth-service  
 
+
+## auth-service  
+
+- sign up a user  
+- sign in a user  
+- sign out a user  
+- give current user info
+
+
+## product-service  
+
+- create a product  
+- give info on a single product  
+- edit a product  
+- give info in all products  
+
+## renting-service  
+
+
+## expiration-service  
+
+
+## payment-service  
+
+
+
 # Associated-Events  
 - UserCreated  
 - UserUpdated  

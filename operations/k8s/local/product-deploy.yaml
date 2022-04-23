@@ -1,40 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-deploy
+  name: product-deploy
   namespace: ingress-nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth-app
+      app: product-app
   template:
     metadata:
       labels:
-        app: auth-app
+        app: product-app
     spec:
       containers:
-        - name: auth
-          image: rentit/auth
+        - name: product
+          image: rentit/product
           imagePullPolicy: Never
           env:
             - name: JWT_SECRET_KEY
-              valueFrom: 
+              valueFrom:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_SECRET_KEY
             - name: MONGO_DB_URL
-              value: 'mongodb://auth-mongodb-service:27017/auth'
+              value: 'mongodb://product-mongodb-service:27017/product'
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-service
+  name: product-service
 spec:
   selector:
-    app: auth-app
+    app: product-app
   ports:
-    - name: auth-port
+    - name: product-port
       protocol: TCP
       port: 3000
       targetPort: 3000

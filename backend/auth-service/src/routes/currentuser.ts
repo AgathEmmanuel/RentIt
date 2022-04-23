@@ -1,7 +1,9 @@
 import express from "express";
 // import jwt from "jsonwebtoken";
-import { loggedoffUserHandler } from "../middleware/loggedoff-user-handler";
-import { currentUserHandler } from "../middleware/current-user-handler";
+//import { loggedoffUserHandler } from "../middleware/loggedoff-user-handler";
+//import { currentUserHandler } from "../middleware/current-user-handler";
+import { loggedoffUserHandler } from "@rentit/shared-custom-package";
+import { currentUserHandler } from "@rentit/shared-custom-package";
 
 const router = express.Router();
 
