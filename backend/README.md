@@ -149,6 +149,10 @@ npm publish --access public
 
 ------------- typescript to javascript conversion  
 
+the library will is converted to javascript from typescript
+befor conversion  
+
+
 npm install typescript del-cli --save-dev  
 
 in package.json
@@ -248,4 +252,32 @@ https://nodkz.github.io/mongodb-memory-server/docs/guides/migration/migrate7/#no
 [https://www.querythreads.com/how-to-watch-and-reload-ts-node-when-type-script-files-change/](https://www.querythreads.com/how-to-watch-and-reload-ts-node-when-type-script-files-change/)  
 [https://docs.nats.io/](https://docs.nats.io/)  
 [https://docs.nats.io/running-a-nats-service/nats-kubernetes/basic-nats-and-nats-streaming-setup](https://docs.nats.io/running-a-nats-service/nats-kubernetes/basic-nats-and-nats-streaming-setup)  
+[https://stackoverflow.com/questions/47736473/how-to-define-global-function-in-typescript](https://stackoverflow.com/questions/47736473/how-to-define-global-function-in-typescript)  
+[https://www.typescriptlang.org/docs/handbook/declaration-files/templates/global-d-ts.html](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/global-d-ts.html)  
+[https://javascript.plainenglish.io/how-to-create-global-variables-in-typescript-with-node-js-9ca24f648991](https://javascript.plainenglish.io/how-to-create-global-variables-in-typescript-with-node-js-9ca24f648991)  
+[https://developerlife.com/2021/07/02/nodejs-typescript-handbook/](https://developerlife.com/2021/07/02/nodejs-typescript-handbook/)  
+[https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)  
+[https://nodejs.dev/learn/nodejs-with-typescript](https://nodejs.dev/learn/nodejs-with-typescript)  
+[https://www.typescriptlang.org/docs/handbook/functions.html](https://www.typescriptlang.org/docs/handbook/functions.html)  
+[https://marcinbiernat.pl/2020/03/nodejs-globals/](https://marcinbiernat.pl/2020/03/nodejs-globals/)  
+```
+declare global {
+    function signupToGetCookie(): Promise<string[]>;
+}
+
+Note: For @types/node < 16 you need to go with:
+declare global {
+    namespace NodeJS {
+        interface Global {
+            signupToGetCookie: Promise<string[]>;
+        }
+    }
+}
+
+```
+[https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)  
+[https://www.toptal.com/nodejs/top-10-common-nodejs-developer-mistakes](https://www.toptal.com/nodejs/top-10-common-nodejs-developer-mistakes)  
+[https://medium.com/gist-for-js/use-of-res-json-vs-res-send-vs-res-end-in-express-b50688c0cddf](https://medium.com/gist-for-js/use-of-res-json-vs-res-send-vs-res-end-in-express-b50688c0cddf)  
+[https://stackoverflow.com/questions/2802055/what-does-the-construct-x-x-y-mean](https://stackoverflow.com/questions/2802055/what-does-the-construct-x-x-y-mean)  
+
 

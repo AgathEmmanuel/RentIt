@@ -24,7 +24,17 @@ router.get("/api/user/currentuser", currentUserHandler, loggedoffUserHandler, (r
     // making use of the currentUserHandler middleware for the
     // above logic
 
-    res.send({ currentUser: req.currentUser || null });
+    //res.send({ currentUser: req.currentUser || null });
+    let currentUser;
+    if (req.currentUser)
+    {
+        currentUser = req.currentUser;
+    }
+    else
+    {
+        currentUser = null;
+    }
+    res.send({ currentUser: currentUser });
     // sending null instead of undefined
 
 });
