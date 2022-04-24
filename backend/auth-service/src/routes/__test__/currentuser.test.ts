@@ -27,11 +27,11 @@ it('should return null if the request in not authencticated, that is without coo
 
 // checking if proper error messag if use not authenticated
 
-it('checking if proper error messag if use not authenticated', async () =>{
+it('checking if proper error messag if user not authenticated', async () =>{
   const response = await request(app)
     .get("/api/user/currentuser")
     .send()
-    .expect(200);
+    .expect(401);
 
   console.log(response.body.errors[0].message);
   expect(response.body.errors[0].message).toEqual('User Not Logged in ');

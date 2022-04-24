@@ -226,6 +226,14 @@ https://nodkz.github.io/mongodb-memory-server/docs/guides/migration/migrate7/#no
 
 
 
+---------- to install from a package.json  file
+
+npm install   
+
+
+------------ for media service
+
+[https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices](https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices)  
 
 
 
@@ -279,5 +287,4 @@ declare global {
 [https://www.toptal.com/nodejs/top-10-common-nodejs-developer-mistakes](https://www.toptal.com/nodejs/top-10-common-nodejs-developer-mistakes)  
 [https://medium.com/gist-for-js/use-of-res-json-vs-res-send-vs-res-end-in-express-b50688c0cddf](https://medium.com/gist-for-js/use-of-res-json-vs-res-send-vs-res-end-in-express-b50688c0cddf)  
 [https://stackoverflow.com/questions/2802055/what-does-the-construct-x-x-y-mean](https://stackoverflow.com/questions/2802055/what-does-the-construct-x-x-y-mean)  
-
-
+[https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices](https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices)  

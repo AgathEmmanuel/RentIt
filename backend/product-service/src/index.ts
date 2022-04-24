@@ -1,26 +1,5 @@
-import express from 'express';
-import 'express-async-errors';
-import { json } from 'body-parser';
-import cookieSession from 'cookie-session';
 import mongoose from 'mongoose';
-
-
-import { errorHandler } from './middleware/error-handler';
-import { routeNotFoundError } from './error/route-not-found-error';
-
-const app = express();
-app.set('trust proxy', 1);
-
-
-app.use(json());
-app.use(cookieSession({ signed: false, secure: true}));
-
-
-app.all('*',async(req,res) => {
-    throw new routeNotFoundError();
-})
-
-app.use(errorHandler);
+import { app } from './app'
 
 
 const authStart = async () => {
@@ -30,11 +9,10 @@ const authStart = async () => {
     }else {
         console.log("Secret Environmental variable available")
     }
-
     if (!process.env.MONGO_DB_URL) {
-        throw new Error('MONGO_URL is not available as env')
+        throw new Error('MONGO_DB_URL in not availble as env variable')
     }else {
-        console.log("product mongodb url available")
+        console.log("Auth Mongodb url variable available")
     }
 
     try {
