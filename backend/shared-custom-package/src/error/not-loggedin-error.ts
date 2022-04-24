@@ -1,7 +1,7 @@
 import { CustomStandardError } from "./custom-standard-error";
 
 export class NotLoggedInError extends CustomStandardError {
-  httpStatusCode = 200;
+  httpStatusCode = 401;
 
   constructor() {
     super('User Not Logged in ');
