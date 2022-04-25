@@ -14,14 +14,14 @@ build:
       manual:
         - src: "src/**/*.ts"
           dest: .
-          #  - image: rentit/product
-          #    context: backend/product-service
-          #    docker:
-          #      dockerfile: Dockerfile
-          #    sync:
-          #      manual:
-          #       - src: "src/**/*.ts"
-          #          dest: .
+  - image: rentit/product
+    context: backend/product-service
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+       - src: "src/**/*.ts"
+         dest: .
 
 
 deploy:
@@ -29,5 +29,5 @@ deploy:
     manifests:
     - ./operations/k8s/local/auth-deploy.yaml
     - ./operations/k8s/local/auth-mongodb-deploy.yaml
-      #    - ./operations/k8s/local/product-deploy.yaml
-      #    - ./operations/k8s/local/product-mongodb-deploy.yaml
+    - ./operations/k8s/local/product-deploy.yaml
+    - ./operations/k8s/local/product-mongodb-deploy.yaml

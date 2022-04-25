@@ -92,5 +92,5 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - Node  
 - MongoDB  
 - Redis  
-- NATS Server  
+- NATS Streaming Server  
 
