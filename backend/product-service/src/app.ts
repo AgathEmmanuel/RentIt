@@ -3,13 +3,15 @@ import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
 
-//import { errorHandler } from './middleware/error-handler';
-//import { routeNotFoundError } from './error/route-not-found-error';
 import { currentUserHandler, errorHandler } from "@rentit/shared-custom-package";
 import { routeNotFoundError } from "@rentit/shared-custom-package";
 
 
 import { createProductRouter } from "./routes/createproduct";
+import { getProductRouter } from "./routes/getproduct";
+
+
+
 
 const app = express();
 app.set("trust proxy", 1);
@@ -26,9 +28,11 @@ app.use(cookieSession({ signed: false, secure: process.env.NODE_ENV !== 'test' }
 // the cookie easily and since jwt is encrypted anyways, so there
 // is no security issue as well
 
-app.use(currentUserHandler)
+app.use(currentUserHandler);
 
-app.use(createProductRouter)
+app.use(createProductRouter);
+
+app.use(getProductRouter);
 
 app.all("*", async (req, res) => {
   throw new routeNotFoundError();

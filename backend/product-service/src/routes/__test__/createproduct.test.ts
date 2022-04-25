@@ -78,7 +78,7 @@ it('invalid rental price should return an  error ',async () => {
 })
 
 it('attributes for the product should be valid ',async () => {
-    await request(app)
+    const response = await request(app)
       .post('/api/product')
       .set('Cookie',global.signupToGetCookie())
       .send({
@@ -86,6 +86,7 @@ it('attributes for the product should be valid ',async () => {
           productPrize: 200000000
       })
       .expect(201);
+    console.log('testing response of prodcut creation',response.body)
 })
 
 
@@ -106,6 +107,7 @@ it('the product created got saved in database', async () => {
       .expect(201);
 
     productsInDb = await Product.find({});
+    // console.log('productsInDb log is',productsInDb[0]);
     expect(productsInDb.length).toEqual(1);
     expect(productsInDb[0].productName).toEqual(productName1);
     expect(productsInDb[0].productPrize).toEqual(productPrize1);

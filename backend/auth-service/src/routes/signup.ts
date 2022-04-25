@@ -66,6 +66,8 @@ router.post("/api/user/signup", [
     // an object req.session  so redefining the entire object 
     req.session = { jwt: newJWT };
 
+    console.log('create product user /api/user log',user)
+
     return res.status(201).send(user);
 
     throw new DatabaseConnectonError();

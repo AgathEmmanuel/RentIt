@@ -2,26 +2,11 @@ import mongoose from "mongoose";
 
 
 // interface with the properties to create a product
-// properties required to build a new product
+// properties required to create a new product
 interface ProductAttributes {
     productName: string;
     productPrize: number;
     userId: string;
-}
-
-// interface that describes the product document in mongoose
-// properties that the product has 
-interface ProductDescription extends mongoose.Document{
-    productName: string;
-    productPrize: number;
-    userId: string;
-}
-
-// interface for the product model
-// properties tied to the model 
-interface ProductModel extends mongoose.Model<ProductDescription>{
-    build(attributes: ProductAttributes): ProductDescription;
-
 }
 
 const productSchema = new mongoose.Schema({
@@ -41,19 +26,40 @@ const productSchema = new mongoose.Schema({
             ret.id = ret._id;
             delete ret._id;
         }
-        // to make sure the outputs matches the 
-        // standards of message transmissio we have
-        // here _id   is  converted into   id 
     }
 });
 
-// defining the build method
-productSchema.statics.build = (attributes: ProductAttributes) => {
+        // to make sure the outputs matches the 
+        // standards of message transmissio we have
+        // here _id   is  converted into   id 
+
+
+// interface for the product model
+// properties tied to the model 
+interface ProductModel extends mongoose.Model<ProductDocument> {
+    createProduct(attributes: ProductAttributes): ProductDocument;
+
+}
+
+
+
+// interface that describes the product document in mongoose
+// properties that the product has 
+interface ProductDocument extends mongoose.Document {
+    productName: string;
+    productPrize: number;
+    userId: string;
+}
+
+
+// defining the createProduct method
+productSchema.statics.createProduct = (attributes: ProductAttributes) => {
     return new Product(attributes);
 };
 
 // an actual Product model is created 
-const Product = mongoose.model<ProductDescription, ProductModel>('Product',productSchema);
+const Product = mongoose.model<ProductDocument, ProductModel>('Product',productSchema);
 
 
 export { Product };
+

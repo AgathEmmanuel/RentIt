@@ -107,6 +107,7 @@ it('sets a cookie after successful signup', async () => {
       // the cookie will be shared only on https connection
       // so we set up a cookie to be false in test environment
       // that is when secure: process.env.NODE_ENV !== 'test' 
+      console.log(response.body)
       expect(response.get('Set-Cookie')).toBeDefined();
 
 });
