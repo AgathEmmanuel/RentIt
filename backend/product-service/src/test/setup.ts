@@ -18,6 +18,9 @@ declare global {
 declare global {
     function signupToGetCookie(): string[];
 }
+declare global {
+    function signupToGetCookieDummyUser(): string[];
+}
 
 let mongoTemp: any;
 // hook that is going to run before all of our tests to 
@@ -56,7 +59,30 @@ global.signupToGetCookie = () => {
     // build a jwt payload  { id, email}
     const jwtData = {
         id: 'aaaaaaaa',
+        //id: new mongoose.Types.ObjectId().toHexString,
         email: 'aaa@aaa.com'
+    };
+    // create the jwt
+    const newJWT = jwt.sign( jwtData, process.env.JWT_SECRET_KEY! );
+    // build a session object  { jwt: jwt_token }
+    const sessionWithToken = { jwt: newJWT };
+    // convert the session into json 
+    const sessionJsonWithToken = JSON.stringify(sessionWithToken);
+    // encode the json into base64
+    const sessionBase64Encoded = Buffer.from(sessionJsonWithToken).toString('base64');
+    // return a sting thats the cookie with the encoded data  
+    return [`session=${sessionBase64Encoded}`];
+    
+};
+
+
+global.signupToGetCookieDummyUser = () => {
+    // faking authentication with a prebuilt a session jwt
+    // build a jwt payload  { id, email}
+    const jwtData = {
+        id: 'dddddd',
+        //id: new mongoose.Types.ObjectId().toHexString,
+        email: 'dddd@aaa.com'
     };
     // create the jwt
     const newJWT = jwt.sign( jwtData, process.env.JWT_SECRET_KEY! );

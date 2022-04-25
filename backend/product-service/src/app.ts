@@ -9,8 +9,8 @@ import { routeNotFoundError } from "@rentit/shared-custom-package";
 
 import { createProductRouter } from "./routes/createproduct";
 import { getProductRouter } from "./routes/getproduct";
-
-
+import { getAllProductRouter } from "./routes/getallproduct";
+import { updateProductRouter } from "./routes/updateproduct";
 
 
 const app = express();
@@ -33,6 +33,11 @@ app.use(currentUserHandler);
 app.use(createProductRouter);
 
 app.use(getProductRouter);
+
+app.use(getAllProductRouter);
+
+app.use(updateProductRouter);
+
 
 app.all("*", async (req, res) => {
   throw new routeNotFoundError();

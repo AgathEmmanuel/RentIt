@@ -288,3 +288,6 @@ declare global {
 [https://medium.com/gist-for-js/use-of-res-json-vs-res-send-vs-res-end-in-express-b50688c0cddf](https://medium.com/gist-for-js/use-of-res-json-vs-res-send-vs-res-end-in-express-b50688c0cddf)  
 [https://stackoverflow.com/questions/2802055/what-does-the-construct-x-x-y-mean](https://stackoverflow.com/questions/2802055/what-does-the-construct-x-x-y-mean)  
 [https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices](https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices)  
+[https://www.typescripttutorial.net/typescript-tutorial/typescript-default-parameters/](https://www.typescripttutorial.net/typescript-tutorial/typescript-default-parameters/)  
+[https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767](https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767)  
+

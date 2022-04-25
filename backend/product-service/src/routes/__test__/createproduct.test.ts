@@ -22,7 +22,7 @@ it('if signed in response status != 401',async () => {
       .post('/api/product')
       .set('Cookie', global.signupToGetCookie())
       .send({});
-    console.log(global.signupToGetCookie());
+    //console.log(global.signupToGetCookie());
     console.log(response.status);
     expect(response.status).not.toEqual(401);
 })
@@ -86,7 +86,7 @@ it('attributes for the product should be valid ',async () => {
           productPrize: 200000000
       })
       .expect(201);
-    console.log('testing response of prodcut creation',response.body)
+    console.log('testing response of product creation',response.body)
 })
 
 
