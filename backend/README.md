@@ -237,6 +237,39 @@ npm install
 
 
 
+------------  event bust   NATS streaming server  
+
+
+docs.nats.io  
+
+[https://www.npmjs.com/package/node-nats-streaming](https://www.npmjs.com/package/node-nats-streaming)  
+
+
+npm install node-nats-streaming ts-node-dev typescript @types/node  
+
+
+kubectl port-forward <pod-name> <port-num>:<port-num>  
+
+kubectl port-forward nats-deploy-768bbf445b-266j6 4222:4222  
+
+
+
+[https://docs.nats.io/legacy/stan/streaming/connecting](https://docs.nats.io/legacy/stan/streaming/connecting)  
+
+  "publish": "ts-node-dev --rs --notify false src/publisher.ts",
+  "listen": "ts-node-dev --rs --notify false src/listener.ts"
+
+
+
+k port-forward nats-deploy-84868bdc97-6jh5k 8222:8222
+
+http://localhost:8222/streaming/clientsz
+
+http://localhost:8222/streaming/clientsz?subs=1
+
+
+
+
 
 
 ```
@@ -290,4 +323,5 @@ declare global {
 [https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices](https://stackoverflow.com/questions/33279153/rest-api-file-ie-images-processing-best-practices)  
 [https://www.typescripttutorial.net/typescript-tutorial/typescript-default-parameters/](https://www.typescripttutorial.net/typescript-tutorial/typescript-default-parameters/)  
 [https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767](https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767)  
-
+[https://hub.docker.com/_/nats-streaming](https://hub.docker.com/_/nats-streaming)  
+[https://docs.nats.io/legacy/stan/streaming/connecting](https://docs.nats.io/legacy/stan/streaming/connecting)  
