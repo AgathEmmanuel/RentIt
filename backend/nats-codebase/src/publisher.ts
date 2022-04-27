@@ -17,7 +17,7 @@ stanClient.on('connect', () => {
       productPrize: 222,
   });
 
-  stanClient.publish('product:created', eventDataJson, () => {
+  stanClient.publish('product:rentedout', eventDataJson, () => {
       console.log('product:created event published');
   });
 
