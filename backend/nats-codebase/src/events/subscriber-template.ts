@@ -1,13 +1,21 @@
 import { Stan } from 'node-nats-streaming';
 import { Message } from 'node-nats-streaming';
+import { ChannelName } from './channel-name';
 
 
-export abstract class Subscriber {
+
+interface Event {
+  channelName: ChannelName;  // event must have a property which have one of the possible values in enum channel name
+  inputData: any;
+
+}
+
+export abstract class Subscriber<T extends Event> {
   abstract queueGroupName: string;
-  abstract channelName: string; 
+  abstract channelName: T['channelName']; 
   private stanSubClient: Stan;
   protected listenerAckWaitTime = 5*1000;          // protected so that the subclass can define if if needed
-  abstract runOnReceivingMessage(inputData: any, msg: Message): void;
+  abstract runOnReceivingMessage(inputData: T['inputData'], msg: Message): void;
   
   constructor(stanSubClient: Stan) {
     this.stanSubClient = stanSubClient;
