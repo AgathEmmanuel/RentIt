@@ -2,6 +2,7 @@ import { Stan } from 'node-nats-streaming';
 import { Message } from 'node-nats-streaming';
 import { ChannelName } from './channel-name';
 
+
 // subscribers usally behave like event handlers 
 // and lot bussines logic may be put at this end
 // and so so much testing is needed to make sure

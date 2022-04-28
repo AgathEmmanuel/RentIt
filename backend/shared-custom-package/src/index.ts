@@ -12,3 +12,12 @@ export * from "./middleware/loggedoff-user-handler";
 export * from "./middleware/error-handler";
 
 
+export * from './events/subscriber-template';
+export * from './events/publisher-template';
+
+export * from './events/channel-name';
+
+export * from './events/product-created-event';
+export * from './events/product-rentedout-event';
+export * from './events/product-updated-event';
+export * from './events/rentorder-created-event';

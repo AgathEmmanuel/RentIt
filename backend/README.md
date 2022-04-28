@@ -269,6 +269,26 @@ http://localhost:8222/streaming/clientsz?subs=1
 
 
 
+------------ event handling 
+
+with typescript a common module is used for  the following
+
+listing of event names  
+exact definition of each event  
+
+
+this works if all microservice are written in typescript  
+
+
+if multple services are written in multiple languages  
+for event handling we can use  
+
+JSON Schema  
+Protobuf 
+Apache Avro  
+
+
+
 
 
 
