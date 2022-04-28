@@ -1,6 +1,5 @@
 import { ChannelName } from "./channel-name";
 
-
 export interface ProductRentedoutEvent {
     channelName: ChannelName.ProductRentedout;
     inputData: {
