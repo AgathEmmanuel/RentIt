@@ -1,6 +1,12 @@
 import mongoose from 'mongoose';
 import { app } from './app'
 
+import { natsDriver } from './nats-driver';
+// lowercase  natsDriver  to specify its an instance of the 
+// class NatsDriver
+
+
+
 
 const authStart = async () => {
 
@@ -16,6 +22,10 @@ const authStart = async () => {
     }
 
     try {
+
+    await natsDriver.connect('clusterIdRentit','clientIdSubscriber1','http://nats-service:4222');
+
+
     await mongoose.connect(process.env.MONGO_DB_URL);
     console.log('Connected to MongoDb')
 } catch (err) {

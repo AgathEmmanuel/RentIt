@@ -3,6 +3,14 @@ import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import { Product } from '../models/product';
 
+// now whenever a new product is created an event should be 
+// published to make sure other services get to know about it  
+
+import { ProductCreatedPublisher } from '../events/publishers/product-created-publisher';
+
+
+
+
 const router = express.Router();
 
 
@@ -23,6 +31,22 @@ router.post('/api/product', loggedoffUserHandler, [
             userId: req.currentUser!.id
         });
         await product.save();
+/*
+        new ProductCreatedPublisher(StanClient).publisherPublish({
+          id: product.id,
+          productName: product.productName, // here we must make sure we are using productName from the product
+                      // becaus the value the came in from request body is not the same as the one
+                      // that was saved to database using product object
+          productPrize: product.productPrize,
+          userId: product.userId
+
+          // should we await the new ProductCreatedPublisher operation
+          // that is should we wait for the publish to be completed before
+          // we sent back response to the user 
+
+        })
+*/
+
     console.log('create product post /api/product log',product)
     res.status(201).send(product);
     //res.sendStatus(201).send(product);
