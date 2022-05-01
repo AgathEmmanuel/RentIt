@@ -39,3 +39,5 @@ deploy:
     - ./operations/k8s/local/auth-mongodb-deploy.yaml
     - ./operations/k8s/local/product-deploy.yaml
     - ./operations/k8s/local/product-mongodb-deploy.yaml
+    - ./operations/k8s/local/rentit-deploy.yaml
+    - ./operations/k8s/local/rentit-mongodb-deploy.yaml

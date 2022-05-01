@@ -288,7 +288,10 @@ Protobuf
 Apache Avro  
 
 
+-------- associating documents in mongodb  
 
+- embedding 
+- Ref/Population feature
 
 
 
