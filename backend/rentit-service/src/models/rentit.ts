@@ -6,11 +6,13 @@ import { RentitStatus } from '@rentit/shared-custom-package';
 import { ProductDocument } from './product';
 
 
+export { RentitStatus }
+
 interface RentitAttributes {
     userId: string;
     status: RentitStatus;
     expiresAt: Date;
-    renit: ProductDocument;
+    rentit: ProductDocument;
     // here we are using Ref/Population feature to reference
     // the Rentit to  a specific product
     // such that for which product the rentit request came in

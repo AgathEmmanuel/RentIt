@@ -1,4 +1,7 @@
+import { RentitStatus } from "@rentit/shared-custom-package";
 import mongoose from "mongoose";
+import { Rentit } from "./rentit";
+
 
 interface ProductAttributes {
     productName: string;
@@ -10,6 +13,7 @@ interface ProductAttributes {
 export interface ProductDocument extends mongoose.Document {
     productName: string;
     productPrize: number;
+    isBeingRentedOut(): Promise<boolean>;
 }
 
 
@@ -39,6 +43,27 @@ const productSchema = new mongoose.Schema({
 
 productSchema.statics.build = (attributes: ProductAttributes) => {
     return new Product(attributes);
+};
+
+productSchema.methods.isBeingRentedOut = async function() {
+
+
+        const rentitExisting = await Rentit.findOne({
+            product: this,
+            status: {
+                $in: [
+                    RentitStatus.RentitCreated,
+                    RentitStatus.RentitAwaitingPayment,
+                    RentitStatus.RentitComplete
+                ]
+            }
+
+        });
+
+        return !!rentitExisting;    //toggle ture or false 2 times
+
+
+
 }
 
 const Product = mongoose.model<ProductDocument, ProductModel>('Product',productSchema);
