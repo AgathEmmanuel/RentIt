@@ -21,3 +21,5 @@ export * from './events/product-created-event';
 export * from './events/product-rentedout-event';
 export * from './events/product-updated-event';
 export * from './events/rentorder-created-event';
+
+export * from './events/types/rentit-status';
