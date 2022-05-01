@@ -22,6 +22,14 @@ build:
       manual:
        - src: "src/**/*.ts"
          dest: .
+  - image: rentit/rentit
+    context: backend/rentit-service
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+       - src: "src/**/*.ts"
+         dest: .
 
 
 deploy:
