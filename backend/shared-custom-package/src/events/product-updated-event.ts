@@ -1,7 +1,7 @@
 import { ChannelName } from "./channel-name";
 
 export interface ProductUpdatedEvent {
-    channelName: ChannelName.ProductRentedout;
+    channelName: ChannelName.ProductUpdated;
     inputData: {
         id: string;
         productName: string;
