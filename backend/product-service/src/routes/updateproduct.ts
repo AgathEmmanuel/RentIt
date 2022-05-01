@@ -1,7 +1,11 @@
 import { loggedoffUserHandler, NotLoggedInError, requestValidater, routeNotFoundError } from '@rentit/shared-custom-package';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
+import { ProductUpdatedPublisher } from '../events/publishers/product-updated-publisher';
 import { Product } from '../models/product';
+import { natsDriver } from '../nats-driver';
+
+
 
 
 
@@ -37,6 +41,22 @@ router.put('/api/product/:id',
             productPrize: req.body.productPrize
         });
         await product.save();
+
+        new ProductUpdatedPublisher(natsDriver.stanCient).publisherPublish({
+            id: product.id,
+            productName: product.productName,
+            productPrize: product.productPrize,
+            userId: product.userId
+        });
+        // in the ProductCreatedPublisher we used await keyword with new
+        // in the case of updated we did not use an await keyword 
+        // that means instantly after this line of code runs the data
+        // res.send will sent the data to the user
+        // and no errors wrt to publishing event to nats will be throwns since thats the case
+        // So adding await will definetly add some latency to the request
+        // but weather its needed will depend on the critcality of the business requirement
+        // for that event
+
 
         res.send(product);
     }

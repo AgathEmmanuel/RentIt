@@ -7,7 +7,7 @@ import { Product } from '../models/product';
 // published to make sure other services get to know about it  
 
 import { ProductCreatedPublisher } from '../events/publishers/product-created-publisher';
-
+import { natsDriver } from '../nats-driver';
 
 
 
@@ -31,8 +31,9 @@ router.post('/api/product', loggedoffUserHandler, [
             userId: req.currentUser!.id
         });
         await product.save();
-/*
-        new ProductCreatedPublisher(StanClient).publisherPublish({
+        
+
+        await new ProductCreatedPublisher(natsDriver.stanCient).publisherPublish({
           id: product.id,
           productName: product.productName, // here we must make sure we are using productName from the product
                       // becaus the value the came in from request body is not the same as the one
@@ -45,7 +46,8 @@ router.post('/api/product', loggedoffUserHandler, [
           // we sent back response to the user 
 
         })
-*/
+
+
 
     console.log('create product post /api/product log',product)
     res.status(201).send(product);

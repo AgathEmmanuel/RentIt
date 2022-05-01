@@ -1,6 +1,7 @@
 import request from 'supertest';
 import { app } from '../../app';
 import { Product } from '../../models/product';
+jest.mock('../../nats-driver');
 
 
 it('route handler post request to /api/product ',async () => {

@@ -35,7 +35,8 @@ stanClient.on('connect', () => {
                                       // even if the service goes offline for some time
 
   const subscription = stanClient.subscribe(
-    'product:tedout',
+    //'product:rentedout',
+    'product:created',
     'rentit-service-queue-group',  // to not accidently dumb the durable name even if all the services restart for a small period of time
                                   // and to make sure all the emitted events go off to one instance of services even when there are 
                                   // multiple instances of the same service running

@@ -18,6 +18,14 @@ spec:
           image: rentit/product
           imagePullPolicy: Never
           env:
+            - name: NATS_URL
+              value: 'http://nats-service:4222'
+            - name: NATS_CLUSTER_ID
+              value: 'clusterIdRentit'
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
             - name: JWT_SECRET_KEY
               valueFrom:
                 secretKeyRef:
