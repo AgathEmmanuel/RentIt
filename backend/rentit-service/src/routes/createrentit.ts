@@ -3,9 +3,11 @@ import express from "express";
 import { Request, Response } from 'express';
 import { body } from "express-validator";
 import mongoose from "mongoose";
+import { RentitCreatedPublisher } from "../events/publishers/order-created-publisher";
 import { Product } from "../models/product";
 
 import { Rentit } from "../models/rentit";
+import { natsDriver } from "../nats-driver";
 
 
 const router =  express.Router();
@@ -91,6 +93,17 @@ router.post('/api/rentit', loggedoffUserHandler, [
         await rentitEntry.save();
         // publish event saying the product was rented out
 
+        new RentitCreatedPublisher(natsDriver.stanCient).publisherPublish({
+            id: rentitEntry.id,
+            status: rentitEntry.status,
+            userId: rentitEntry.userId,
+            expiresAt: rentitEntry.expiresAt.toISOString(),
+            product: {
+                id: productBeingRented.id,
+                productPrize: productBeingRented.productPrize
+            
+            }
+        })
     res.status(201).send(rentitEntry);
 
 });
