@@ -20,6 +20,10 @@ export * from './events/channel-name';
 export * from './events/product-created-event';
 export * from './events/product-rentedout-event';
 export * from './events/product-updated-event';
-export * from './events/rentorder-created-event';
+export * from './events/rentit-created-event';
 
 export * from './events/types/rentit-status';
+
+
+export * from './events/rentit-cancelled-event';
+export * from './events/rentit-created-event';
