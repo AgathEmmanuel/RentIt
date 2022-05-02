@@ -39,7 +39,8 @@ router.post('/api/product', loggedoffUserHandler, [
                       // becaus the value the came in from request body is not the same as the one
                       // that was saved to database using product object
           productPrize: product.productPrize,
-          userId: product.userId
+          userId: product.userId,
+          version: product.version,
 
           // should we await the new ProductCreatedPublisher operation
           // that is should we wait for the publish to be completed before

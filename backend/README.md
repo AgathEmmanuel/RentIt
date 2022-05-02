@@ -314,6 +314,25 @@ expiration service
 media service
 - picture uploaded  
 
+
+
+---------- record updates with optimistic concurrency control
+
+verisoning or timestamping can be used
+
+
+---------- mongoose update versioning
+
+npm install mongoose-update-if-current
+
+
+we increment or include the 'version' number of a record with an event
+whenever the primary service responsible for a record emits an event
+to describe create/update/destroy  to  a record
+
+
+
+
 ```
 
 

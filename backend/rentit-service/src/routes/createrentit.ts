@@ -98,6 +98,7 @@ router.post('/api/rentit', loggedoffUserHandler, [
             status: rentitEntry.status,
             userId: rentitEntry.userId,
             expiresAt: rentitEntry.expiresAt.toISOString(),
+            version: rentitEntry.version,
             product: {
                 id: productBeingRented.id,
                 productPrize: productBeingRented.productPrize

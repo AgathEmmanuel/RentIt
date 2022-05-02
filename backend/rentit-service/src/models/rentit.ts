@@ -23,6 +23,7 @@ interface RentitDocument extends mongoose.Document {
     status: RentitStatus;
     expiresAt: Date;
     rentit: ProductDocument;
+    version: number;
     // here we are using Ref/Population feature to reference
 
 }

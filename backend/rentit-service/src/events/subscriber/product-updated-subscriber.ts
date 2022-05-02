@@ -12,7 +12,13 @@ export class ProductUpdatedSubscriber extends Subscriber<ProductUpdatedEvent> {
 
     async runOnReceivingMessage(inputData: ProductUpdatedEvent['inputData'], msg: Message) {
 
-        const rentitProductEntry = await Product.findById(inputData.id);
+        //const rentitProductEntry = await Product.findById(inputData.id);
+        const rentitProductEntry = await Product.findOne({
+            _id: inputData.id,
+            version: inputData.version-1
+
+
+        });
         if (!rentitProductEntry) {
             throw new Error('Product not found')
         }

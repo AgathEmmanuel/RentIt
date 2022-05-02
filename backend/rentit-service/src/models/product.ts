@@ -2,6 +2,8 @@ import { RentitStatus } from "@rentit/shared-custom-package";
 import mongoose from "mongoose";
 import { Rentit } from "./rentit";
 
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
+import { version } from "typescript";
 
 interface ProductAttributes {
     id: string;
@@ -14,6 +16,7 @@ interface ProductAttributes {
 export interface ProductDocument extends mongoose.Document {
     productName: string;
     productPrize: number;
+    version: number;
     isBeingRentedOut(): Promise<boolean>;
 }
 
@@ -41,6 +44,9 @@ const productSchema = new mongoose.Schema({
         }
     }
 });
+
+productSchema.set('versionKey','version');
+productSchema.plugin(updateIfCurrentPlugin);
 
 productSchema.statics.build = (attributes: ProductAttributes) => {
     //return new Product(attributes);

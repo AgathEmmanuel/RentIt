@@ -1,11 +1,11 @@
 import { loggedoffUserHandler, NotLoggedInError, requestValidater, routeNotFoundError } from '@rentit/shared-custom-package';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { ProductUpdatedPublisher } from '../events/publishers/product-updated-publisher';
 import { Product } from '../models/product';
 import { natsDriver } from '../nats-driver';
 
 
+import { ProductUpdatedPublisher } from '../events/publishers/product-updated-publisher';
 
 
 
@@ -46,7 +46,8 @@ router.put('/api/product/:id',
             id: product.id,
             productName: product.productName,
             productPrize: product.productPrize,
-            userId: product.userId
+            userId: product.userId,
+            version: product.version
         });
         // in the ProductCreatedPublisher we used await keyword with new
         // in the case of updated we did not use an await keyword 

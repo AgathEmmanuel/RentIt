@@ -33,6 +33,7 @@ router.delete('/api/rentit/:rentitId',loggedoffUserHandler, async (req: Request,
 
     new RentitCancelledPublisher(natsDriver.stanCient).publisherPublish({
         id: rentitEntry.id,
+        version: rentitEntry.version,
         product: {
             id: rentitEntry.rentit.id
             

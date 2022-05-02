@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
+
+
 
 // interface with the properties to create a product
 // properties required to create a new product
@@ -29,6 +32,12 @@ const productSchema = new mongoose.Schema({
     }
 });
 
+
+// enabling versioning in mongoose and
+// renaming to versionKey  to  version
+productSchema.set('versionKey','version');
+productSchema.plugin(updateIfCurrentPlugin);
+
         // to make sure the outputs matches the 
         // standards of message transmissio we have
         // here _id   is  converted into   id 
@@ -49,6 +58,7 @@ interface ProductDocument extends mongoose.Document {
     productName: string;
     productPrize: number;
     userId: string;
+    version: number;
 }
 
 
