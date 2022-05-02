@@ -10,10 +10,10 @@ const router =  express.Router();
 
 
 router.get('/api/rentit', loggedoffUserHandler, async (req: Request, res: Response) => {
-    const rentitEnties = await Rentit.find({
+    const rentitEntries = await Rentit.find({
         userId: req.currentUser!.id
     }).populate('product');
-    res.send(rentitEnties);
+    res.send(rentitEntries);
 
 });
 

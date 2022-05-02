@@ -53,7 +53,7 @@ export abstract class Subscriber<T extends Event> {
 
     subscription.on('message', (msg: Message) => {
       console.log(
-        `Message received | ${this.channelName} | ${this.queueGroupName}`
+        `Message received | channel= ${this.channelName} | queueGroup= ${this.queueGroupName}`
       );
       const processedMessage = this.processMessage(msg);
       this.runOnReceivingMessage(processedMessage, msg);

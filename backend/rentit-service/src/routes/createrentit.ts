@@ -3,7 +3,7 @@ import express from "express";
 import { Request, Response } from 'express';
 import { body } from "express-validator";
 import mongoose from "mongoose";
-import { RentitCreatedPublisher } from "../events/publishers/order-created-publisher";
+import { RentitCreatedPublisher } from "../events/publishers/rentit-created-publisher";
 import { Product } from "../models/product";
 
 import { Rentit } from "../models/rentit";

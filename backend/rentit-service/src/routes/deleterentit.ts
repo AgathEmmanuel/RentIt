@@ -1,7 +1,7 @@
 import { loggedoffUserHandler, NotLoggedInError, RentitStatus, routeNotFoundError } from "@rentit/shared-custom-package";
 import express from "express";
 import { Request, Response } from 'express';
-import { RentitCancelledPublisher } from "../events/publishers/order-cancelled-publisher";
+import { RentitCancelledPublisher } from "../events/publishers/rentit-cancelled-publisher";
 import { Rentit } from "../models/rentit";
 import { natsDriver } from "../nats-driver";
 

@@ -295,6 +295,25 @@ Apache Avro
 
 
 
+-------- events published by each service   
+
+product service
+- product created
+- product updated
+
+rentit service
+- rentit created
+- rentit cancelled
+
+payment service
+- payment created
+
+expiration service
+- expiration complete
+
+media service
+- picture uploaded  
+
 ```
 
 

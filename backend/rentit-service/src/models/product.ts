@@ -4,6 +4,7 @@ import { Rentit } from "./rentit";
 
 
 interface ProductAttributes {
+    id: string;
     productName: string;
     productPrize: number;
 
@@ -27,7 +28,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    price: {
+    productPrize: {
         type: Number,
         required: true,
         min: 0
@@ -42,7 +43,12 @@ const productSchema = new mongoose.Schema({
 });
 
 productSchema.statics.build = (attributes: ProductAttributes) => {
-    return new Product(attributes);
+    //return new Product(attributes);
+    return new Product({
+        _id: attributes.id,
+        productName: attributes.productName,
+        productPrize: attributes.productPrize
+    });
 };
 
 productSchema.methods.isBeingRentedOut = async function() {

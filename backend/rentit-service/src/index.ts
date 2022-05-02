@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 import { app } from './app'
+import { ProductCreatedSubscriber } from './events/subscriber/product-created-subscriber';
+import { ProductUpdatedSubscriber } from './events/subscriber/product-updated-subscriber';
 
 import { natsDriver } from './nats-driver';
 // lowercase  natsDriver  to specify its an instance of the 
 // class NatsDriver
-
 
 
 
@@ -57,6 +58,8 @@ const authStart = async () => {
     // and anytime the INT or TERM signal comes in the client
     // will be closed down manually
 
+    new ProductCreatedSubscriber(natsDriver.stanCient).subscriptionSetUp();
+    new ProductUpdatedSubscriber(natsDriver.stanCient).subscriptionSetUp();
 
     await mongoose.connect(process.env.MONGO_DB_URL);
     console.log('Connected to MongoDb')
