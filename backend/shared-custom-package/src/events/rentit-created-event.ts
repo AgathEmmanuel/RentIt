@@ -5,6 +5,7 @@ export interface RentitCreatedEvent {
   channelName: ChannelName.RentitCreated;
   inputData: {
     id: string;
+    version: number;
     status: RentitStatus;
     userId: string;
     expiresAt: string;
