@@ -332,6 +332,19 @@ to describe create/update/destroy  to  a record
 
 
 
+whenever we save something to db make sure to analyse the impact
+and emit proper events so that everything is synced perfectly
+
+
+
+--------- note to solve vscode issues showing errors wrt typescript
+
+command + shift + p
+
+> reload
+
+
+
 
 ```
 

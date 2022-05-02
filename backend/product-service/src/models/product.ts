@@ -22,7 +22,8 @@ const productSchema = new mongoose.Schema({
     // and so lowercas 's' in   string
     productName: { type: String, required: true },
     productPrize: { type: Number, required: true },
-    userId: { type: String, required: true }
+    userId: { type: String, required: true },
+    rentitId: { type: String,}
 },{
     toJSON: {
         transform(doc,ret) {
@@ -59,6 +60,7 @@ interface ProductDocument extends mongoose.Document {
     productPrize: number;
     userId: string;
     version: number;
+    rentitId?: string; // ? => is optionaly string or undefined
 }
 
 

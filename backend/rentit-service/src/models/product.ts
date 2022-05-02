@@ -23,6 +23,7 @@ export interface ProductDocument extends mongoose.Document {
 
 interface ProductModel extends mongoose.Model<ProductDocument> {
     build(attributes: ProductAttributes): ProductDocument
+    findByIdAndPreviousVersionEvent(event: { id: string, version: number }): Promise<ProductDocument | null>;
 
 }
 
@@ -48,6 +49,13 @@ const productSchema = new mongoose.Schema({
 productSchema.set('versionKey','version');
 productSchema.plugin(updateIfCurrentPlugin);
 
+productSchema.statics.findByIdAndPreviousVersionEvent = (inputData: { id: string, version: number }) => {
+    return Product.findOne({
+        _id: inputData.id,
+        version: inputData.version - 1
+    })
+
+};
 productSchema.statics.build = (attributes: ProductAttributes) => {
     //return new Product(attributes);
     return new Product({

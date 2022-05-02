@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 import { app } from './app'
+import { ProductCreatedPublisher } from './events/publishers/product-created-publisher';
+import { RentitCancelledSubscriber } from './events/subscribers/rentit-cancelled-subscriber';
+import { RentitCreatedSubscriber } from './events/subscribers/rentit-created-subscriber';
 
 import { natsDriver } from './nats-driver';
 // lowercase  natsDriver  to specify its an instance of the 
@@ -57,6 +60,8 @@ const authStart = async () => {
     // and anytime the INT or TERM signal comes in the client
     // will be closed down manually
 
+    new RentitCreatedSubscriber(natsDriver.stanCient).subscriptionSetUp();
+    new RentitCancelledSubscriber(natsDriver.stanCient).subscriptionSetUp();
 
     await mongoose.connect(process.env.MONGO_DB_URL);
     console.log('Connected to MongoDb')

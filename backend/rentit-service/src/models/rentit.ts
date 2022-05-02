@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 import { RentitStatus } from '@rentit/shared-custom-package';
 
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 import { ProductDocument } from './product';
 
@@ -54,6 +55,10 @@ const rentitSchema = new mongoose.Schema({
         }
     }
 });
+
+rentitSchema.set('versionKey','version');
+rentitSchema.plugin(updateIfCurrentPlugin);
+
 
 interface RentitModel extends mongoose.Model<RentitDocument> {
     build(attributes: RentitAttributes): RentitDocument;

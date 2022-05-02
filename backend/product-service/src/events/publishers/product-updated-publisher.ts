@@ -1,6 +1,7 @@
 import { ChannelName, Publisher } from "@rentit/shared-custom-package";
 
 import { ProductUpdatedEvent } from "@rentit/shared-custom-package";
+import { natsDriver } from "../../nats-driver";
 
 
 export class ProductUpdatedPublisher extends Publisher<ProductUpdatedEvent> {
@@ -11,3 +12,4 @@ export class ProductUpdatedPublisher extends Publisher<ProductUpdatedEvent> {
     // at any other point of time
 
 }
+

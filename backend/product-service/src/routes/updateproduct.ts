@@ -1,4 +1,4 @@
-import { loggedoffUserHandler, NotLoggedInError, requestValidater, routeNotFoundError } from '@rentit/shared-custom-package';
+import { ExistingUserError, loggedoffUserHandler, NotLoggedInError, requestValidater, routeNotFoundError } from '@rentit/shared-custom-package';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import { Product } from '../models/product';
@@ -30,6 +30,10 @@ router.put('/api/product/:id',
 
         if (!product) {
             throw new routeNotFoundError();
+        }
+
+        if (product.rentitId) {
+            throw new ExistingUserError('The product is being rented by the rentit service');
         }
 
         if (product.userId !== req.currentUser!.id) {
