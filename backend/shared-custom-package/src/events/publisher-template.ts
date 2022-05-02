@@ -10,7 +10,8 @@ interface Event {
 
 export abstract class Publisher<T extends Event> {
     abstract channelName: T['channelName'];
-    private stanPubClient: Stan;
+    //private stanPubClient: Stan;
+    protected stanPubClient: Stan;
 
     constructor(stanPubclient: Stan) {
         this.stanPubClient = stanPubclient;

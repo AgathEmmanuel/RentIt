@@ -20,7 +20,8 @@ interface Event {
 export abstract class Subscriber<T extends Event> {
   abstract queueGroupName: string;
   abstract channelName: T['channelName']; 
-  private stanSubClient: Stan;
+  //protected stanSubClient: Stan;
+  protected stanSubClient: Stan;
   protected listenerAckWaitTime = 5*1000;          // protected so that the subclass can define if if needed
   abstract runOnReceivingMessage(inputData: T['inputData'], msg: Message): void;
   
