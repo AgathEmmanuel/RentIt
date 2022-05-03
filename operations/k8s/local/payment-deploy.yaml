@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-deploy
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-app
+  template:
+    metadata:
+      labels:
+        app: payment-app
+    spec:
+      containers:
+        - name: payment
+          image: rentit/payment
+          imagePullPolicy: Never
+          env:
+            - name: NATS_URL
+              value: 'http://nats-service:4222'
+            - name: NATS_CLUSTER_ID
+              value: 'clusterIdRentit'
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_SECRET_KEY
+            - name: MONGO_DB_URL
+              value: 'mongodb://payment-mongodb-service:27017/payment'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+spec:
+  selector:
+    app: payment-app
+  ports:
+    - name: payment-port
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

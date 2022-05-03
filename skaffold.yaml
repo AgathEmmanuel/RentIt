@@ -38,7 +38,14 @@ build:
       manual:
        - src: "src/**/*.ts"
          dest: .
-
+  - image: rentit/payment
+    context: backend/payment-service
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+       - src: "src/**/*.ts"
+         dest: .
 
 deploy:
   kubectl:
