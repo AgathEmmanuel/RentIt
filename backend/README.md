@@ -344,6 +344,47 @@ command + shift + p
 > reload
 
 
+-----------  mongodb shell
+
+https://tecadmin.net/tutorial/mongodb/mongo-shell/
+
+
+$ mongo
+
+
+mongo --host 10.10.8.1 --port 27017
+
+
+quit()
+
+use DATABASE_NAME
+
+db.users.insert({ id: 1 })
+
+show dbs
+
+db.dropDatabase()
+
+db.copyDatabase("olddb","newdb")
+
+
+use mydb
+show collections
+
+db.getCollectionInfos();
+db.getCollectionInfos({ name: "accounts" });
+
+
+db.COLLECTION_NAME.find(condition)  
+
+
+db.users.find()
+
+db.users.find().pretty();
+
+db.users.find({"id": 1001})
+
+
 
 
 ```
