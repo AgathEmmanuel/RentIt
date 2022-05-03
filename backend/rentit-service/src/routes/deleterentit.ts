@@ -35,7 +35,7 @@ router.delete('/api/rentit/:rentitId',loggedoffUserHandler, async (req: Request,
         id: rentitEntry.id,
         version: rentitEntry.version,
         product: {
-            id: rentitEntry.rentit.id
+            id: rentitEntry.product.id
             
         }
     })

@@ -13,7 +13,7 @@ interface RentitAttributes {
     userId: string;
     status: RentitStatus;
     expiresAt: Date;
-    rentit: ProductDocument;
+    product: ProductDocument;
     // here we are using Ref/Population feature to reference
     // the Rentit to  a specific product
     // such that for which product the rentit request came in
@@ -23,7 +23,7 @@ interface RentitDocument extends mongoose.Document {
     userId: string;
     status: RentitStatus;
     expiresAt: Date;
-    rentit: ProductDocument;
+    product: ProductDocument;
     version: number;
     // here we are using Ref/Population feature to reference
 

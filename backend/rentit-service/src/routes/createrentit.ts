@@ -17,12 +17,12 @@ const EXPIRATION_TIME_SECONDS = 20;
 
 
 router.post('/api/rentit', loggedoffUserHandler, [
-    body('rentitId')
+    body('productId')
         .not()
         .isEmpty()
         .custom((input: string) => mongoose.Types.ObjectId.isValid(input))
         // to validate if the id is a valid mongodb id 
-        .withMessage('rentidId must be provided')
+        .withMessage('productId must be provided')
 ], requestValidater, 
     async (req: Request, res: Response) => {
 
@@ -87,7 +87,7 @@ router.post('/api/rentit', loggedoffUserHandler, [
             userId: req.currentUser!.id,
             status: RentitStatus.RentitCreated,
             expiresAt: expiration,
-            rentit: productBeingRented
+            product: productBeingRented
         });
 
         await rentitEntry.save();
@@ -105,6 +105,8 @@ router.post('/api/rentit', loggedoffUserHandler, [
             
             }
         })
+    console.log('create product post /api/rentit log',rentitEntry)
+    console.log('create product post /api/rentit log',rentitEntry)
     res.status(201).send(rentitEntry);
 
 });
