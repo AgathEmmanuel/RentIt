@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 import { app } from './app'
+import { ExpirationCompleteSubscriber } from './events/subscriber/expirtation-complete-subscriber';
 import { ProductCreatedSubscriber } from './events/subscriber/product-created-subscriber';
 import { ProductUpdatedSubscriber } from './events/subscriber/product-updated-subscriber';
 
 import { natsDriver } from './nats-driver';
 // lowercase  natsDriver  to specify its an instance of the 
 // class NatsDriver
-
 
 
 const authStart = async () => {
@@ -60,6 +60,7 @@ const authStart = async () => {
 
     new ProductCreatedSubscriber(natsDriver.stanCient).subscriptionSetUp();
     new ProductUpdatedSubscriber(natsDriver.stanCient).subscriptionSetUp();
+    new ExpirationCompleteSubscriber(natsDriver.stanCient).subscriptionSetUp();
 
     await mongoose.connect(process.env.MONGO_DB_URL);
     console.log('Connected to MongoDb')
