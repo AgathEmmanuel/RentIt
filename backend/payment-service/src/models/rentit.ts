@@ -1,6 +1,9 @@
 import { RentitStatus } from "@rentit/shared-custom-package";
 import mongoose, { mongo } from "mongoose";
 
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
+
+
 interface RentitAttributes {
 
     id: string;
@@ -45,6 +48,8 @@ const rentitSchema = new mongoose.Schema({
     }
 });
 
+rentitSchema.set('versionKey','version');
+rentitSchema.plugin(updateIfCurrentPlugin);
 
 rentitSchema.statics.build= (attributes: RentitAttributes) => {
     return new Rentit({
