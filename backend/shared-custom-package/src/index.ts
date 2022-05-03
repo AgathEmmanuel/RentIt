@@ -27,3 +27,6 @@ export * from './events/types/rentit-status';
 
 export * from './events/rentit-cancelled-event';
 export * from './events/rentit-created-event';
+
+
+export * from './events/expiration-complete-event';

@@ -7,5 +7,6 @@ export enum ChannelName {
   ProductRentedout = "product:rentedout",
   RentitCreated = "rentit:created",
   RentitCancelled = "rentit:cancelled",
-  
+  ExpirationComplete = "expiration:complete"
+
 }
