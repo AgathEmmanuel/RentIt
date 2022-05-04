@@ -30,3 +30,5 @@ export * from './events/rentit-created-event';
 
 
 export * from './events/expiration-complete-event';
+
+export * from './events/payment-created-event';
