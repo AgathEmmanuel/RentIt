@@ -386,6 +386,28 @@ db.users.find({"id": 1001})
 
 
 
+------------ stripe 
+
+token 
+API key
+
+npm install stripe
+
+
+creating a stripe secret
+
+kubectl create secret generic stipe-secret --from-literal STRIPE_KEY=secret-key
+
+kubectl create secret generic stripe-secret --from-literal STRIPE_KEY=sk_test_adfadfadfadfadfadflewrw
+
+
+
+while the account is in test mode, there is a very special token that we 
+can provide that will always succeed with the stipe api
+
+"rentitId": "aadfadsfadfdtqt"
+"token": "tok_visa"
+
 
 ```
 

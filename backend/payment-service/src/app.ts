@@ -5,6 +5,7 @@ import cookieSession from "cookie-session";
 
 import { currentUserHandler, errorHandler } from "@rentit/shared-custom-package";
 import { routeNotFoundError } from "@rentit/shared-custom-package";
+import { createPaymentRouter } from "./routes/createPayment";
 
 
 
@@ -26,6 +27,7 @@ app.use(cookieSession({ signed: false, secure: process.env.NODE_ENV !== 'test' }
 
 app.use(currentUserHandler);
 
+app.use(createPaymentRouter);
 
 
 app.all("*", async (req, res) => {

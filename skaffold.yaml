@@ -58,3 +58,5 @@ deploy:
     - ./operations/k8s/local/rentit-mongodb-deploy.yaml
     - ./operations/k8s/local/expiration-deploy.yaml
     - ./operations/k8s/local/expiration-redis-deploy.yaml
+    - ./operations/k8s/local/payment-deploy.yaml
+    - ./operations/k8s/local/payment-mongodb-deploy.yaml

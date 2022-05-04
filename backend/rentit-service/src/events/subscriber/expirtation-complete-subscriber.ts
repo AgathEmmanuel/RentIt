@@ -18,6 +18,10 @@ export class ExpirationCompleteSubscriber extends Subscriber<ExpirationCompleteE
             throw new Error('the rentit product expiring not found');
         }
         
+        // to check for rentit product thats already been payed for..
+        if (rentitExpiringProduct.status == RentitStatus.RentitComplete) {
+            return msg.ack();
+        }
         rentitExpiringProduct.set({
             status: RentitStatus.RentitCancelled,
             //product: null,
