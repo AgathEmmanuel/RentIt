@@ -54,16 +54,26 @@ router.post('/api/payment', loggedoffUserHandler,
 
              // charge the user his rent using strpe api
 
+             /*
              const charge = await stripe.charges.create({
-                 currency: 'inr',
-                 amount: 1000,
+                 currency: 'usd',
+                 amount: 2000,
                  // amount: rentitProductEntry.productPrize * 100, 
                  // converting into cents 
-                 source: token
+                 source: token,
+                 description: 'Test payment'
 
              });
 
+             */
              
+             const charge = {
+              "id": "ch_justTestingOutWithADummyCharge",
+              "object": "charge",
+              "amount": 2000,
+              "source": "tok_visa"
+            }
+
 
              // we ideally should get charge id in response from stripe
              const payment = Payment.build({

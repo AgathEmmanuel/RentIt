@@ -409,6 +409,11 @@ can provide that will always succeed with the stipe api
 "token": "tok_visa"
 
 
+https://stripe.com/docs/payments/accept-a-payment-charges
+
+
+
+
 ```
 
 
