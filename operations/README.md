@@ -23,6 +23,18 @@ Repo per Service Approach
 
 
 
+##Deployment  
+
+build new image  
+push to docker hub  
+update deployment  
+
+
+
+## kubernetes  
+
+kubectl config view  
+kubectl config use-context <context_name>  
 
 
 
