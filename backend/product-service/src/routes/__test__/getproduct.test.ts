@@ -1,8 +1,6 @@
-import { response } from "express";
 import mongoose from "mongoose";
 import request from "supertest";
 import { app } from "../../app";
-import { Product } from "../../models/product";
 
 it("if product not present return 404", async () => {
     const id = new mongoose.Types.ObjectId().toHexString();
@@ -31,8 +29,8 @@ it("if product present return that product ", async () => {
       .post('/api/product')
       .set('Cookie', global.signupToGetCookie())
       .send({
-          productName: productName1,
-          productPrize: productPrize1
+          productName1,
+          productPrize1
       })
       .expect(201);
 

@@ -1,6 +1,5 @@
 import request from 'supertest';
 import { app } from '../../app';
-import { Password } from '../../password-hasher';
 
 
 
@@ -11,8 +10,8 @@ it('should not successfully signin when email provided not exist', async () => {
           email: 'aaa@a.com',
           password: 'aaaaaa'
       })
-      .expect(400)
-})
+      .expect(400);
+});
 
 
 it('singing should fail if password is wrong', async () => {
