@@ -13,6 +13,7 @@ const PostCreate = () => {
     }
   return (
     <div>
+      <h1>Post your Rental</h1>
       <form onSubmit={onSubmit}>
         <div className="post-create-form">
           <label>Ad Title</label>
