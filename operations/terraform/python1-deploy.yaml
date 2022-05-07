@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python1-deployment
+  labels:
+    app: python1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python1
+  template:
+    metadata:
+      labels:
+        app: python1
+    spec:
+      containers:
+      - name: python1
+        image: python:3.6
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 99d;done"]
+        ports:
+          - containerPort: 80
+        env:
+          - name: "GOOGLE_APPLICATION_CREDENTIALS"
+            value: "/var/run/secret/cloud.google.com/service-account.json"
+        volumeMounts:
+          - name: "service-account"
+            mountPath: "/var/run/secret/cloud.google.com"
+      volumes:
+        - name: "service-account"
+          secret:
+            secretName: "media-app-sa-key"
