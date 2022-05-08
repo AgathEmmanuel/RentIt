@@ -1,0 +1,33 @@
+# Mult Stage build 
+
+# Stage 1
+
+#FROM node:16-alpine
+FROM node:16-alpine AS reactbuilder
+
+
+WORKDIR /app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+# CMD ["npm","start"]
+
+
+# Stage 2
+
+RUN npm run build
+
+FROM nginx:1.19.0
+
+WORKDIR /usr/share/nginx/html
+
+# remove default nginx static resources
+RUN rm -rf ./*
+
+COPY --from=reactbuilder /app/build .
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

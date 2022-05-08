@@ -1,5 +1,6 @@
-FROM node:16-alpine
+# Single Stage build 
 
+FROM node:16-alpine
 
 WORKDIR /app
 
@@ -10,3 +11,4 @@ RUN npm install --only-prod
 COPY ./ ./
 
 CMD ["npm","start"]
+
