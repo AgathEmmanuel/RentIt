@@ -56,6 +56,7 @@ gcloud container clusters get-credentials <cluster-name>
 - Enable Google Cloud Build  
 - Adding Google cloud build to skaffold  
 - Setup ingress-nginx on GKE  
+- Or if using Istio install istio on GKE  
 - Updating k8s yaml file to point remote cluster  
 
 
