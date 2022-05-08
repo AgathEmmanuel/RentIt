@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: media-mongodb-deploy
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: media-mongodb-app
+  template:
+    metadata:
+      labels:
+        app: media-mongodb-app
+    spec:
+      containers:
+        - name: media-mongodb
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: media-mongodb-service
+spec:
+  selector:
+    app: media-mongodb-app
+  ports:
+    - name: media-mongodb-port
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

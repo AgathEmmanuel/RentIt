@@ -1,6 +1,6 @@
 # Operations  
 
-## CI CD  
+## CI CD  Set up with Github  
 
 -----  local machine  
 
@@ -35,6 +35,30 @@ update deployment
 
 kubectl config view  
 kubectl config use-context <context_name>  
+
+
+
+## Set up with GCP and Skaffold  
+
+
+gcloud config set project <project-name>  
+gcloud config set compute/zone us-central1-a  
+
+
+OR  
+
+gcloud init  
+
+
+gcloud container clusters get-credentials <cluster-name>  
+
+
+- Enable Google Cloud Build  
+- Adding Google cloud build to skaffold  
+- Setup ingress-nginx on GKE  
+- Updating k8s yaml file to point remote cluster  
+
+
 
 
 

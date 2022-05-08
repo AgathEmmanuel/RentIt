@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-mongodb-deploy
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-mongodb-app
+  template:
+    metadata:
+      labels:
+        app: product-mongodb-app
+    spec:
+      containers:
+        - name: product-mongodb
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-mongodb-service
+spec:
+  selector:
+    app: product-mongodb-app
+  ports:
+    - name: product-mongodb-port
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-mongodb-deploy
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-mongodb-app
+  template:
+    metadata:
+      labels:
+        app: auth-mongodb-app
+    spec:
+      containers:
+        - name: auth-mongodb
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-mongodb-service
+spec:
+  selector:
+    app: auth-mongodb-app
+  ports:
+    - name: auth-mongodb-port
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
