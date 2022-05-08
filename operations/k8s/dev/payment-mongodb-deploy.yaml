@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-mongodb-deploy
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-mongodb-app
+  template:
+    metadata:
+      labels:
+        app: payment-mongodb-app
+    spec:
+      containers:
+        - name: payment-mongodb
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-mongodb-service
+spec:
+  selector:
+    app: payment-mongodb-app
+  ports:
+    - name: payment-mongodb-port
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
