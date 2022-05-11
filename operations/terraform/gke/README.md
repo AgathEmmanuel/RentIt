@@ -1,6 +1,6 @@
 
 
-cloud config set project <project name>
+gcloud config set project <project name>
 
 
 terraform init  
@@ -10,6 +10,9 @@ terraform apply
 
 gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --region $(terraform output -raw region)  
 
+gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --zone us-central1-c 
+
+gcloud container clusters get-credentials test-cluster-ag --zone us-central1-c 
 
 ```
 
