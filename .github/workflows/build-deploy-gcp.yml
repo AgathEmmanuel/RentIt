@@ -5,7 +5,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the dev branch
   push:
     branches:
-      - dev
+      - dev-deploy
     paths:
       - 'backend/auth-service/**'
       - 'backend/product-service/**'
