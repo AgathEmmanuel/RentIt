@@ -2,6 +2,8 @@ name: auth-tests
 
 on:
   pull_request:
+    branches:
+      - dev
     paths:
       - 'backend/auth-service/**'
 
