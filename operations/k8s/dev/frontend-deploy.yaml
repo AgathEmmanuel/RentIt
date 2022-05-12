@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: media-mongodb-deploy
+  name: frontend-deploy
   namespace: ingress-nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: media-mongodb-app
+      app: frontend-app
   template:
     metadata:
       labels:
-        app: media-mongodb-app
+        app: frontend-app
     spec:
       containers:
-        - name: media-mongodb
-          image: mongo
+        - name: frontend
+          image: us.gcr.io/GCP_PROJECTID/frontend
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: media-mongodb-service
+  name: frontend-service
 spec:
   selector:
-    app: media-mongodb-app
+    app: frontend-app
   ports:
-    - name: media-mongodb-port
+    - name: frontend-port
       protocol: TCP
-      port: 27017
-      targetPort: 27017
+      port: 3000
+      targetPort: 3000
