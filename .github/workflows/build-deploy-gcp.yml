@@ -1,0 +1,92 @@
+name: build-deploy-gcp
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the dev branch
+  push:
+    branches:
+      - dev
+    paths:
+      - 'backend/auth-service/**'
+      - 'backend/product-service/**'
+      - 'backend/rentit-service/**'    
+      - 'backend/expiration-service/**'
+      - 'backend/payment-service/**'
+      - 'backend/frontend-service/**'
+      - 'operations/k8s/dev/**'
+      - 'operations/istio/dev/**'
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE }}
+  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Install Kubectl
+      - name: Install kubectl
+        run: |
+          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+          curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+          echo "$(<kubectl.sha256) kubectl" | sha256sum --check
+          sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+          kubectl version --client
+          
+      # Install Skaffold
+      - name: Install Skaffold
+        run: |
+          curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+          sudo install skaffold /usr/local/bin/
+          skaffold version
+          
+      # Cache skaffold image builds & config
+      - name: Cache skaffold image builds & config
+        uses: actions/cache@v2
+        with:
+          path: ~/.skaffold/
+          key: fixed-${{ github.sha }}
+
+      # Setup gcloud CLI
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+          
+          
+      # Configure Workload Identity Federation and generate an access token
+      #- id: 'auth'
+      #  name: 'Authenticate to Google Cloud'
+      #  uses: 'google-github-actions/auth@v0'
+      #  with:
+      #    workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+      #    service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
+  
+      # Authentication via credentials json
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+
+
+      # Get the GKE credentials so we can deploy to the cluster
+      - run: |-
+          gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
+
+      # Build and deploy to GKE cluster
+      - name: Build and Deploy to GKE cluster with Skaffold
+        run: |
+          echo 'Using Skaffold to build and deploy to GCP'
+          cp operations/skaffold/dev/skaffold.yaml .
+          sed -i 's|GCP_PROJECTID|'${PROJECT_ID}'|g' skaffold.yaml
+          find ./operations/k8s/dev -type f -exec sed -i 's/GCP_PROJECTID/'${PROJECT_ID}'|g' {} +
+          skaffold run
+
+
+      # Verify deployment on GKE cluster
+      - name: Verify deployment
+        run: kubectl get pods
