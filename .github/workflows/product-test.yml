@@ -2,6 +2,8 @@ name: product-tests
 
 on:
   pull_request:
+    branches:
+      - dev
     paths:
       - 'backend/product-service/**'
 
