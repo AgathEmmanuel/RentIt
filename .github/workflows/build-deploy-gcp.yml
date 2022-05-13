@@ -87,7 +87,7 @@ jobs:
           cp operations/skaffold/dev/skaffold.yaml .
           sed -i 's|GCP_PROJECTID|'${PROJECT_ID}'|g' skaffold.yaml
           find ./operations/k8s/dev -type f -exec sed -i 's/GCP_PROJECTID/'${PROJECT_ID}'|g' {} +
-          skaffold run
+          skaffold run --status-check=false
 
 
       # Verify deployment on GKE cluster
