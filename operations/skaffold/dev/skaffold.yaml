@@ -25,7 +25,6 @@ build:
        - src: "src/**/*.ts"
          dest: .
   - image: us.gcr.io/GCP_PROJECTID/rentit
-    context: backend/product-service
     context: backend/rentit-service
     docker:
       dockerfile: Dockerfile
