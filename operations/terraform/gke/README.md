@@ -32,6 +32,10 @@ gcloud container clusters resize gke-name --node-pool gke-node-pool-name --num-n
 
 
 
+## adding service accounts to github actions  
+
+cat {PATH_TO_DOWNLOADED_JSON_FILE} | base64  
+
 
 ```
 
