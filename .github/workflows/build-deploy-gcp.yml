@@ -100,7 +100,7 @@ jobs:
       - name: Build and Deploy to GKE cluster with Skaffold
         run: |
           echo 'Using Skaffold to build and deploy to GCP'
-          skaffold run
+          skaffold run --status-check=false
 
 
       # Verify deployment on GKE cluster
