@@ -47,6 +47,16 @@ jobs:
           
 
 
+      # Setting up skaffold config files and k8s yamls to point to dev gcp cluster
+      - name: Set up skaffold config files & k8s yamls to point to dev
+        run: |     
+          cp operations/skaffold/dev/skaffold.yaml .
+          sed -i 's/GCP_PROJECTID/'$PROJECT_ID'/g' skaffold.yaml
+          find ./operations/k8s/dev -type f -exec sed -i 's/GCP_PROJECTID/'$PROJECT_ID'/g' {} +
+     
+
+
+
 
       # Configure Workload Identity Federation and generate an access token
       #- id: 'auth'
@@ -61,35 +71,35 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-          
-          
+                 
           
       # Setup gcloud CLI
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
           
           
-
       # Get the GKE credentials so we can deploy to the cluster
       - run: |
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-
-
+          
+         
+         
+       
+       
+         
+         
       # Cache skaffold image builds & config
-      #- name: Cache skaffold image builds & config
-      #  uses: actions/cache@v2
-      #  with:
-      #    path: ~/.skaffold/
-      #    key: fixed-${{ github.sha }}
+      - name: Cache skaffold image builds & config
+        uses: actions/cache@v2
+        with:
+          path: ~/.skaffold/
+          key: fixed-${{ github.sha }}
           
           
       # Build and deploy to GKE cluster
       - name: Build and Deploy to GKE cluster with Skaffold
         run: |
           echo 'Using Skaffold to build and deploy to GCP'
-          cp operations/skaffold/dev/skaffold.yaml .
-          sed -i 's/GCP_PROJECTID/'$PROJECT_ID'/g' skaffold.yaml
-          find ./operations/k8s/dev -type f -exec sed -i 's/GCP_PROJECTID/'$PROJECT_ID'/g' {} +
           skaffold run
 
 
