@@ -32,30 +32,30 @@ build:
       manual:
        - src: "src/**/*.ts"
          dest: .
-  - image: us.gcr.io/GCP_PROJECTID/expiration
-    context: backend/expiration-service
-    docker:
-      dockerfile: Dockerfile
-    sync:
-      manual:
-       - src: "src/**/*.ts"
-         dest: .
-  - image: us.gcr.io/GCP_PROJECTID/payment
-    context: backend/payment-service
-    docker:
-      dockerfile: Dockerfile
-    sync:
-      manual:
-       - src: "src/**/*.ts"
-         dest: .
-  - image: us.gcr.io/GCP_PROJECTID/frontend
-    context: frontend/rentit-client
-    docker:
-      dockerfile: Dockerfile
-    sync:
-      manual:
-       - src: "**/*.js"
-         dest: .
+         #  - image: us.gcr.io/GCP_PROJECTID/expiration
+         #    context: backend/expiration-service
+         #    docker:
+         #      dockerfile: Dockerfile
+         #    sync:
+         #      manual:
+         #       - src: "src/**/*.ts"
+         #         dest: .
+         #  - image: us.gcr.io/GCP_PROJECTID/payment
+         #    context: backend/payment-service
+         #    docker:
+         #      dockerfile: Dockerfile
+         #    sync:
+         #      manual:
+         #       - src: "src/**/*.ts"
+         #         dest: .
+         #  - image: us.gcr.io/GCP_PROJECTID/frontend
+         #    context: frontend/rentit-client
+         #    docker:
+         #      dockerfile: Dockerfile
+         #    sync:
+         #      manual:
+         #       - src: "**/*.js"
+         #         dest: .
 
 
 
@@ -68,10 +68,10 @@ deploy:
     - ./operations/k8s/local/product-mongodb-deploy.yaml
     - ./operations/k8s/local/rentit-deploy.yaml
     - ./operations/k8s/local/rentit-mongodb-deploy.yaml
-    - ./operations/k8s/local/expiration-deploy.yaml
-    - ./operations/k8s/local/expiration-redis-deploy.yaml
-    - ./operations/k8s/local/payment-deploy.yaml
-    - ./operations/k8s/local/payment-mongodb-deploy.yaml
-    - ./operations/k8s/local/frontend-deploy.yaml
-    - ./operations/istio/dev/nats-deploy.yaml
-    - ./operations/istio/dev/gw-vs.yaml
+      #    - ./operations/k8s/local/expiration-deploy.yaml
+      #    - ./operations/k8s/local/expiration-redis-deploy.yaml
+      #    - ./operations/k8s/local/payment-deploy.yaml
+      #    - ./operations/k8s/local/payment-mongodb-deploy.yaml
+      #    - ./operations/k8s/local/frontend-deploy.yaml
+      #    - ./operations/istio/dev/nats-deploy.yaml
+      #    - ./operations/istio/dev/gw-vs.yaml
