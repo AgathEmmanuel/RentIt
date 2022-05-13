@@ -16,7 +16,7 @@ spec:
       containers:
         - name: expiration
           image: us.gcr.io/GCP_PROJECTID/expiration
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           env:
             - name: NATS_URL
               value: 'http://nats-service:4222'

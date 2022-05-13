@@ -16,7 +16,7 @@ spec:
       containers:
         - name: payment
           image: us.gcr.io/GCP_PROJECTID/payment
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           env:
             - name: NATS_URL
               value: 'http://nats-service:4222'

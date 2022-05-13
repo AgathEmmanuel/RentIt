@@ -16,7 +16,7 @@ spec:
       containers:
         - name: rentit
           image: us.gcr.io/GCP_PROJECTID/rentit
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           env:
             - name: NATS_URL
               value: 'http://nats-service:4222'

@@ -16,7 +16,7 @@ spec:
       containers:
         - name: auth
           image: us.gcr.io/GCP_PROJECTID/auth
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           env:
             - name: JWT_SECRET_KEY
               valueFrom: 
