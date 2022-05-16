@@ -7,6 +7,7 @@ kind: Config
 build:
   googleCloudBuild:
     projectId: GCP_PROJECTID
+    tryImportMissing: true
   artifacts:
   - image: us.gcr.io/GCP_PROJECTID/auth
     context: backend/auth-service
