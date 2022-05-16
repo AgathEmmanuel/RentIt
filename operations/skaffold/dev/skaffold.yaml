@@ -16,46 +16,46 @@ build:
       manual:
         - src: "src/**/*.ts"
           dest: .
-  - image: us.gcr.io/GCP_PROJECTID/product
-    context: backend/product-service
-    docker:
-      dockerfile: Dockerfile
-    sync:
-      manual:
-       - src: "src/**/*.ts"
-         dest: .
-  - image: us.gcr.io/GCP_PROJECTID/rentit
-    context: backend/rentit-service
-    docker:
-      dockerfile: Dockerfile
-    sync:
-      manual:
-       - src: "src/**/*.ts"
-         dest: .
-         #  - image: us.gcr.io/GCP_PROJECTID/expiration
-         #    context: backend/expiration-service
-         #    docker:
-         #      dockerfile: Dockerfile
-         #    sync:
-         #      manual:
-         #       - src: "src/**/*.ts"
-         #         dest: .
-         #  - image: us.gcr.io/GCP_PROJECTID/payment
-         #    context: backend/payment-service
-         #    docker:
-         #      dockerfile: Dockerfile
-         #    sync:
-         #      manual:
-         #       - src: "src/**/*.ts"
-         #         dest: .
-         #  - image: us.gcr.io/GCP_PROJECTID/frontend
-         #    context: frontend/rentit-client
-         #    docker:
-         #      dockerfile: Dockerfile
-         #    sync:
-         #      manual:
-         #       - src: "**/*.js"
-         #         dest: .
+          #  - image: us.gcr.io/GCP_PROJECTID/product
+          #    context: backend/product-service
+          #    docker:
+          #      dockerfile: Dockerfile
+          #    sync:
+          #      manual:
+          #       - src: "src/**/*.ts"
+          #         dest: .
+          #  - image: us.gcr.io/GCP_PROJECTID/rentit
+          #    context: backend/rentit-service
+          #    docker:
+          #      dockerfile: Dockerfile
+          #    sync:
+          #      manual:
+          #       - src: "src/**/*.ts"
+          #         dest: .
+          #  - image: us.gcr.io/GCP_PROJECTID/expiration
+          #    context: backend/expiration-service
+          #    docker:
+          #      dockerfile: Dockerfile
+          #    sync:
+          #      manual:
+          #       - src: "src/**/*.ts"
+          #         dest: .
+          #  - image: us.gcr.io/GCP_PROJECTID/payment
+          #    context: backend/payment-service
+          #    docker:
+          #      dockerfile: Dockerfile
+          #    sync:
+          #      manual:
+          #       - src: "src/**/*.ts"
+          #         dest: .
+          #  - image: us.gcr.io/GCP_PROJECTID/frontend
+          #    context: frontend/rentit-client
+          #    docker:
+          #      dockerfile: Dockerfile
+          #    sync:
+          #      manual:
+          #       - src: "**/*.js"
+          #         dest: .
 
 
 
@@ -64,10 +64,10 @@ deploy:
     manifests:
     - ./operations/k8s/dev/auth-deploy.yaml
     - ./operations/k8s/dev/auth-mongodb-deploy.yaml
-    - ./operations/k8s/dev/product-deploy.yaml
-    - ./operations/k8s/dev/product-mongodb-deploy.yaml
-    - ./operations/k8s/dev/rentit-deploy.yaml
-    - ./operations/k8s/dev/rentit-mongodb-deploy.yaml
+      #    - ./operations/k8s/dev/product-deploy.yaml
+      #    - ./operations/k8s/dev/product-mongodb-deploy.yaml
+      #    - ./operations/k8s/dev/rentit-deploy.yaml
+      #    - ./operations/k8s/dev/rentit-mongodb-deploy.yaml
       #    - ./operations/k8s/dev/expiration-deploy.yaml
       #    - ./operations/k8s/dev/expiration-redis-deploy.yaml
       #    - ./operations/k8s/dev/payment-deploy.yaml
