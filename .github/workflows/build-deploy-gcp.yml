@@ -45,6 +45,13 @@ jobs:
           sudo install skaffold /usr/local/bin/
           skaffold version
           
+      # Cache skaffold image builds & config
+      - name: Cache skaffold image builds & config
+        uses: actions/cache@v2
+        with:
+          path: ~/.skaffold/
+          key: fixed-${{ github.sha }}
+
 
 
       # Setting up skaffold config files and k8s yamls to point to dev gcp cluster
@@ -82,18 +89,7 @@ jobs:
       - run: |
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
           
-         
-         
        
-       
-         
-         
-      # Cache skaffold image builds & config
-      - name: Cache skaffold image builds & config
-        uses: actions/cache@v2
-        with:
-          path: ~/.skaffold/
-          key: fixed-${{ github.sha }}
           
           
       # Build and deploy to GKE cluster
