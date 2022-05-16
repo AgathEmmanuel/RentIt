@@ -60,7 +60,48 @@ gcloud auth activate-service-account --key-file=gcpcmdlineuser.json
 
 
 
+
+
+
+
+
+
+---------- access for gke to gcr  
+
+create a service account with 
+
+
+Container Registry Service Agent  
+Kubernetes Engine Node Service Agent  
+
+
+kubectl --namespace=dev create secret docker-registry gcr-json-key \
+          --docker-server=https://gcr.io \
+          --docker-username=_json_key \
+          --docker-password="$(cat ~/Downloads/gcr-test.json)" \
+          --docker-email=youremail@example.com
+
+There are a few things to note about this command.
+
+    We are naming the secret “gcr-json-key”. This is the name we will use when we configure ImagePullSecrets later.
+    The docker username should be “_json_key”. It must be named this. Any other value will not work.
+    The docker email address can be any valid email address.
+
+At this point, we should be able to update the default service account for the namespace with ImagePullSecrets.
+
+$ kubectl --namespace=dev patch serviceaccount default \
+          -p '{"imagePullSecrets": [{"name": "gcr-json-key"}]}'
+"default" patched
+
+We use the kubectl patch command to configure the ImagePullSecrets on the default service account with the name of the secret we just created. 
+
+
+
+
+
 ```
+
+
 
 
 
@@ -75,3 +116,6 @@ gcloud auth activate-service-account --key-file=gcpcmdlineuser.json
 [https://cloud.google.com/storage/docs/gsutil_install](https://cloud.google.com/storage/docs/gsutil_install)  
 [https://cloud.google.com/storage/docs/gsutil/commands/iam](https://cloud.google.com/storage/docs/gsutil/commands/iam)  
 [https://pnatraj.medium.com/how-to-run-gcloud-command-line-using-a-service-account-f39043d515b9](https://pnatraj.medium.com/how-to-run-gcloud-command-line-using-a-service-account-f39043d515b9)  
+[https://ryaneschinger.com/blog/using-google-container-registry-gcr-with-minikube/](https://ryaneschinger.com/blog/using-google-container-registry-gcr-with-minikube/)  
+[https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster)  
+[https://blog.container-solutions.com/using-google-container-registry-with-kubernetes](https://blog.container-solutions.com/using-google-container-registry-with-kubernetes)  
