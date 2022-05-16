@@ -46,11 +46,11 @@ jobs:
           skaffold version
           
       # Cache skaffold image builds & config
-      - name: Cache skaffold image builds & config
-        uses: actions/cache@v2
-        with:
-          path: ~/.skaffold/
-          key: fixed-${{ github.sha }}
+      #- name: Cache skaffold image builds & config
+      #  uses: actions/cache@v2
+      #  with:
+      #    path: ~/.skaffold/
+      #    key: fixed-${{ github.sha }}
 
 
 
