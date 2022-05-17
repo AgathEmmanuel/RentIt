@@ -74,5 +74,5 @@ deploy:
     - ./operations/k8s/dev/payment-deploy.yaml
     - ./operations/k8s/dev/payment-mongodb-deploy.yaml
     - ./operations/k8s/dev/frontend-deploy.yaml
-    - ./operations/istio/dev/nats-deploy.yaml
+    - ./operations/k8s/dev/nats-deploy.yaml
     - ./operations/istio/dev/gw-vs.yaml
