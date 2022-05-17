@@ -81,6 +81,12 @@ kubectl --namespace=dev create secret docker-registry gcr-json-key \
           --docker-password="$(cat ~/Downloads/gcr-test.json)" \
           --docker-email=youremail@example.com
 
+
+
+
+          --docker-server=us.gcr.io
+
+
 There are a few things to note about this command.
 
     We are naming the secret “gcr-json-key”. This is the name we will use when we configure ImagePullSecrets later.
