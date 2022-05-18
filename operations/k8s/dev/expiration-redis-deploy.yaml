@@ -21,6 +21,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: expiration-redis-service
+  namespace: default
 spec:
   selector:
     app: expiration-redis-app
