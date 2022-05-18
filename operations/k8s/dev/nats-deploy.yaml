@@ -42,7 +42,7 @@ spec:
   selector:
     app: nats-app
   ports:
-    - name: client
+    - name: tcp
       protocol: TCP
       port: 4222
       targetPort: 4222
