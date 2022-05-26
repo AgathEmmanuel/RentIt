@@ -29,7 +29,10 @@ type BucketStorageSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of BucketStorage. Edit bucketstorage_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Name is the name of BucketStorage we want to create
+	Name string `json:"name"`
+	// Locked to make sure ojects in BucketStorage is not deleted
+	Locked string `json:"locked"`
 }
 
 // BucketStorageStatus defines the observed state of BucketStorage

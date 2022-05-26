@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - cloudbucket.operators.rentit.com
+  resources:
+  - bucketstorages
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cloudbucket.operators.rentit.com
+  resources:
+  - bucketstorages/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cloudbucket.operators.rentit.com
+  resources:
+  - bucketstorages/status
+  verbs:
+  - get
+  - patch
+  - update
