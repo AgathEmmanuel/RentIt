@@ -1,0 +1,6 @@
+domain: operators.rentit.com
+layout:
+- go.kubebuilder.io/v3
+projectName: cloudbucket
+repo: github.com/AgathEmmanuel/RentIt/operations/operators/cloudbucket
+version: "3"
