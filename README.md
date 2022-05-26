@@ -4,6 +4,11 @@
 A Renting platform
 
 
+# Architecture Diagram  
+
+<img src="https://raw.githubusercontent.com/AgathEmmanuel/RentIt/dev/design/image/Rentit-Architecture.png" width="100%" >  
+
+
 # Features  
 
 - [X] Microservice design pattern docs  
@@ -27,12 +32,6 @@ A Renting platform
 - [X] Containerization with Google Cloud Build and Container Registry  
 - [ ] Helm chart for the project for Day 1 operations  
 - [ ] Operators for the project for Day 2 operations  
-
-
-
-# Architecture Diagram  
-
-<img src="https://raw.githubusercontent.com/AgathEmmanuel/RentIt/dev/design/image/Rentit-Architecture.png" width="100%" >  
 
 
 
