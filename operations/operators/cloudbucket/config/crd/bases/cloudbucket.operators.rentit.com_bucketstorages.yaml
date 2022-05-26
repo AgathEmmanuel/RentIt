@@ -37,7 +37,7 @@ spec:
             properties:
               locked:
                 description: Locked to make sure ojects in BucketStorage is not deleted
-                type: string
+                type: boolean
               name:
                 description: Name is the name of BucketStorage we want to create
                 type: string

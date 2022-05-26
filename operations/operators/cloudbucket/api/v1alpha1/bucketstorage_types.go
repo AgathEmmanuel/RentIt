@@ -31,7 +31,7 @@ type BucketStorageSpec struct {
 	// Name is the name of BucketStorage we want to create
 	Name string `json:"name"`
 	// Locked to make sure ojects in BucketStorage is not deleted
-	Locked string `json:"locked"`
+	Locked bool `json:"locked"`
 }
 
 // BucketStorageStatus defines the observed state of BucketStorage

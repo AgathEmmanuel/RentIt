@@ -3,4 +3,5 @@ kind: BucketStorage
 metadata:
   name: bucketstorage-sample
 spec:
-  # TODO(user): Add fields here
+  name: media-service-bucket
+  locked: false
