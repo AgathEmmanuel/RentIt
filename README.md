@@ -4,6 +4,39 @@
 A Renting platform
 
 
+# Features  
+
+- [X] Microservice design pattern docs  
+- [X] Choreography based event driven architecture  
+- [X] product service: Post products for rent  
+- [ ] media service: add images of products  
+- [ ] comment service: Give comments on Products  
+- [X] payment service: pay rent for the product  
+- [ ] distributed transactions  
+- [ ] currency conversion  
+- [X] rentit service: rent posted products  
+- [X] frontend: basic-skeleton
+- [X] authentication service: handle auth of the users  
+- [ ] Istio based end user jwt authentication  
+- [ ] OPA based end user jwt authorization    
+- [ ] partner service: partners who do mass rent outs  
+- [X] Terraform for the GKE cluster  
+- [X] sample testing pipeline with Jest, node and Github actions on pull request  
+- [X] local development with Minikube, Skaffold and Nginx Ingress
+- [X] CI/CD with full app deploy with Github actions, Skaffold and GKE   
+- [X] Containerization with Google Cloud Build and Container Registry  
+- [ ] Helm chart for the project for Day 1 operations  
+- [ ] Operator for the project for Day 2 operations  
+
+
+
+# Architecture Diagram  
+
+<img src="https://raw.githubusercontent.com/AgathEmmanuel/RentIt/dev/design/image/Rentit-Architecture.png" width="100%" >  
+
+
+
+
 # Business Properties  
 
 - User can just rent out products or list there products for rent  
@@ -13,14 +46,6 @@ A Renting platform
 - In unlocked condition rent values can be edited  
 - Based on time for which its scheduled for rent others can further rent same product  
 - Based on available quantity for rent others can further rent same product  
-
-# Exta-Features  
-
-- Post products for rent  
-- Give comments on Products  
-- Distributed transactions  
-- Currency conversion  
-
 
 
 # Web Page Overiew  
@@ -68,11 +93,17 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 
 ## renting-service  
 
+- enable users to rent any product
+
 
 ## expiration-service  
 
+- the product initial rent should be payed within expiration time  
+
 
 ## payment-service  
+
+- enable users to pay there rent  
 
 
 
@@ -93,4 +124,9 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - MongoDB  
 - Redis  
 - NATS Streaming Server  
-
+- Terraform  
+- GCP  
+- GKE
+- Cloud Build  
+- Container Registry  
+- Microservices  

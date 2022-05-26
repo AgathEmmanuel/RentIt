@@ -467,3 +467,4 @@ declare global {
 [https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767](https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767)  
 [https://hub.docker.com/_/nats-streaming](https://hub.docker.com/_/nats-streaming)  
 [https://docs.nats.io/legacy/stan/streaming/connecting](https://docs.nats.io/legacy/stan/streaming/connecting)  
+[https://developers.redhat.com/articles/2021/09/21/distributed-transaction-patterns-microservices-compared](https://developers.redhat.com/articles/2021/09/21/distributed-transaction-patterns-microservices-compared)  
