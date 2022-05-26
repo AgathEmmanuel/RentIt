@@ -1,0 +1,20 @@
+# permissions for end users to view bucketstorages.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: bucketstorage-viewer-role
+rules:
+- apiGroups:
+  - cloudbucket.operators.rentit.com
+  resources:
+  - bucketstorages
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cloudbucket.operators.rentit.com
+  resources:
+  - bucketstorages/status
+  verbs:
+  - get

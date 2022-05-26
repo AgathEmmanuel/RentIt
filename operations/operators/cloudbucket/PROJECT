@@ -3,4 +3,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: cloudbucket
 repo: github.com/AgathEmmanuel/RentIt/operations/operators/cloudbucket
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: operators.rentit.com
+  group: cloudbucket
+  kind: BucketStorage
+  path: github.com/AgathEmmanuel/RentIt/operations/operators/cloudbucket/api/v1alpha1
+  version: v1alpha1
 version: "3"

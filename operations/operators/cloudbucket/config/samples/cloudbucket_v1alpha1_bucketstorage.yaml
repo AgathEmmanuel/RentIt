@@ -1,0 +1,6 @@
+apiVersion: cloudbucket.operators.rentit.com/v1alpha1
+kind: BucketStorage
+metadata:
+  name: bucketstorage-sample
+spec:
+  # TODO(user): Add fields here
