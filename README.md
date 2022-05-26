@@ -26,7 +26,7 @@ A Renting platform
 - [X] CI/CD with full app deploy with Github actions, Skaffold and GKE   
 - [X] Containerization with Google Cloud Build and Container Registry  
 - [ ] Helm chart for the project for Day 1 operations  
-- [ ] Operator for the project for Day 2 operations  
+- [ ] Operators for the project for Day 2 operations  
 
 
 
