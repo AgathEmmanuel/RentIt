@@ -28,7 +28,6 @@ type BucketStorageSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of BucketStorage. Edit bucketstorage_types.go to remove/update
 	// Name is the name of BucketStorage we want to create
 	Name string `json:"name"`
 	// Locked to make sure ojects in BucketStorage is not deleted

@@ -39,8 +39,7 @@ spec:
                 description: Locked to make sure ojects in BucketStorage is not deleted
                 type: string
               name:
-                description: Foo is an example field of BucketStorage. Edit bucketstorage_types.go
-                  to remove/update Name is the name of BucketStorage we want to create
+                description: Name is the name of BucketStorage we want to create
                 type: string
             required:
             - locked

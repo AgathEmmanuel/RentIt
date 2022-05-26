@@ -55,5 +55,9 @@ kubebuilder init --domain operators.rentit.com --repo github.com/AgathEmmanuel/R
 
 kubebuilder create api --group cloudbucket --version v1alpha1 --kind BucketStorage  
 
+make manifests  
+
+
+
 
 ```
