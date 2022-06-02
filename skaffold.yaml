@@ -47,13 +47,21 @@ build:
        - src: "src/**/*.ts"
          dest: .
   - image: rentit/frontend
-    context: frontend/rentit-client
+    context: frontend/rentit-client-next
     docker:
       dockerfile: Dockerfile
     sync:
       manual:
        - src: "**/*.js"
          dest: .
+         #  - image: rentit/frontend
+         #    context: frontend/rentit-client
+         #    docker:
+         #      dockerfile: Dockerfile
+         #    sync:
+         #      manual:
+         #       - src: "**/*.js"
+         #         dest: .
 
 
 deploy:
