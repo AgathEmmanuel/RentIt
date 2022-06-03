@@ -31,6 +31,7 @@ import (
 type BucketStorageReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
+	GCPSsvc services.GCPSsvc
 }
 
 //+kubebuilder:rbac:groups=cloudbucket.operators.rentit.com,resources=bucketstorages,verbs=get;list;watch;create;update;patch;delete
@@ -60,6 +61,15 @@ func (r *BucketStorageReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 		r.Status().Update(ctx, instance)
 	}
 
+	if instance.Status.State == cloudbucketv1alpha1.PENDING_STATE {
+		log.Info("Starting to create Bucket resources")
+		if err := r.createResources(ctx,instance); err!=nil {
+			instance.Status.State = cloudbucketv1alpha1.ERROR_STATE
+			r.Status().Update(ctx,instance)
+			log.Error(err,"Buckete creation error")
+			return ctrl.Result{}, err
+		}
+	}
 	// TODO(user): your logic here
 
 	return ctrl.Result{}, nil
@@ -70,4 +80,12 @@ func (r *BucketStorageReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&cloudbucketv1alpha1.BucketStorage{}).
 		Complete(r)
+}
+
+func (r *BucketStorageReconciler) createResources(ctx context.Context, bucketstorages *cloudbucketv1alpha1.BucketStorage) error {
+	bucketstorages.Status.State = cloudbucketv1alpha1.CREATING_STATE
+	err := r.Status().Update(ctx,bucketstorages)
+	if err != nil {
+		return err
+	}
 }
