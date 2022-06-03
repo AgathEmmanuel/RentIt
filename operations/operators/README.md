@@ -57,7 +57,11 @@ kubebuilder create api --group cloudbucket --version v1alpha1 --kind BucketStora
 
 make manifests  
 
+make generate
+
 make install		# install the crd to your cluster  
+
+make run
 
 k create -f config/samples/cloudbucket_v1alpha1_bucketstorage.yaml -n default
 			# to create the custom resource  

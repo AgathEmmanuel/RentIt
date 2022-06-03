@@ -47,7 +47,18 @@ type BucketStorageReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.11.2/pkg/reconcile
 func (r *BucketStorageReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = log.FromContext(ctx)
+	log := log.FromContext(ctx)
+
+	instance := &cloudbucketv1alpha1.BucketStorage{}
+	if err := r.Get(ctx, req.NamespacedName, instance); err != nil {
+		log.Error(err, "not able to get the BucketStorage resource")
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+
+	}
+	if instance.Status.State == "" {
+		instance.Status.State = cloudbucketv1alpha1.PENDING_STATE
+		r.Status().Update(ctx, instance)
+	}
 
 	// TODO(user): your logic here
 
