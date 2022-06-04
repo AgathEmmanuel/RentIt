@@ -7,13 +7,18 @@ import axios from 'axios';
 export default () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState([]);
   const onSubmit = async event => {
       event.preventDefault(); // to make sure form does not try to submit itself in browser
 
+      try {
       const response = await axios.post('/api/user/signup', { email, password});
       //console.log(email,password);
       console.log(response.data);
-
+  } catch (err) {
+    console.log(err.response.data);
+    setErrors(err.response.data.errors);
+     }
   };
 
 
@@ -28,6 +33,14 @@ export default () => {
           <label>Password</label>
           <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" />
       </div>
+      {errors.length >0 && (
+      <div className="alert alert-danger">
+        <h4>Something went wrong..</h4>
+        <ul className="my-0">
+        {errors.map(err => ( <li key={err.message}>{err.message}</li> ))}
+        </ul>
+      </div>
+      )}
       <button className="btn btn-primary"> Sign up</button>
     </form>
   );
