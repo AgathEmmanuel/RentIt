@@ -1,5 +1,4 @@
 import axios from "axios";
-import { responseSymbol } from "next/dist/server/web/spec-compliant/fetch-event";
 
 {/*
 export default () => {
@@ -14,9 +13,9 @@ export default () => {
 const LandingPage = ({ currentUser }) => {
     // console.log('I am the bot', message);
 
-    console.log(currentUser);
 
-    axios.get('/api/user/currentuser')
+    // axios.get('/api/user/currentuser')
+
     // NOTE: while we try to execute to axios request here it works very fine
     // but when we did the same in getInitialProps it failed
     // so there is definitely some environmental changes here
@@ -31,6 +30,8 @@ const LandingPage = ({ currentUser }) => {
     // the correct domain
 
 
+    console.log(currentUser);
+
     console.log('executed in client testing.. hello');
 
     return <h1>Landing Page</h1>;
@@ -39,7 +40,9 @@ const LandingPage = ({ currentUser }) => {
 };
 
 LandingPage.getInitialProps = async () => {
+
     // getInitialProps is specific to next js 
+
     // if we try to implement getinitialprops next js will call this function
     // while its attempting to render our application on the server
     // its our opportunity to fetch some data that the component needs during 
@@ -76,8 +79,26 @@ LandingPage.getInitialProps = async () => {
     if (typeof window === 'undefined') {
         // this means the code is on the server 
         // so any request made should be made to http://ingress-nginx.ingress-nginx...
+
+          // 'http://SERVICENAME.NAMESPACE.svc.cluster.local'
+          // 'http://ingress-nginx-controller.svc.cluster.local/api/user/currentuser',
+
+        const { data } = await axios.get(
+          'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/user/currentuser',
+          { headers: { Host: 'rentit.dev', }, }
+        );
+        return data;
+       //return {}
+
+
     } else {
         // we are on the browser so requests can be made withe basic url
+
+        const { data } = await axios.get('/api/user/currentuser');
+
+        // { currentUser: {} }
+
+        return data;
 
     }
     return {};

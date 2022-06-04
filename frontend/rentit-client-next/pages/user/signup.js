@@ -25,7 +25,7 @@ export default () => {
       event.preventDefault(); // to make sure form does not try to submit itself in browser
 
 
-      {/*
+      /*
 
       try {
       const response = await axios.post('/api/user/signup', { email, password});
@@ -36,7 +36,7 @@ export default () => {
     setErrors(err.response.data.errors);
      }
 
-    */}
+    */
 
     // Router.push('/');
     // doRequest();
