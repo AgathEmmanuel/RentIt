@@ -39,7 +39,7 @@ const LandingPage = ({ currentUser }) => {
 
 };
 
-LandingPage.getInitialProps = async () => {
+LandingPage.getInitialProps = async ({ req }) => {
 
     // getInitialProps is specific to next js 
 
@@ -74,6 +74,10 @@ LandingPage.getInitialProps = async () => {
     //return response.data;
 
 
+
+
+    //console.log(req.headers);
+
     // we need to have some logic to figure out what our env is so we can use
     // the correct domain
     if (typeof window === 'undefined') {
@@ -85,7 +89,8 @@ LandingPage.getInitialProps = async () => {
 
         const { data } = await axios.get(
           'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/user/currentuser',
-          { headers: { Host: 'rentit.dev', }, }
+          { headers: req.headers }
+     //     { headers: { Host: 'rentit.dev', }, }
         );
         return data;
        //return {}
