@@ -1,3 +1,88 @@
+import axios from "axios";
+import { responseSymbol } from "next/dist/server/web/spec-compliant/fetch-event";
+
+{/*
 export default () => {
     return <h1>Landing Page</h1>;
 };
+
+*/}
+
+
+
+// const LandingPage = ({ message }) => {
+const LandingPage = ({ currentUser }) => {
+    // console.log('I am the bot', message);
+
+    console.log(currentUser);
+
+    axios.get('/api/user/currentuser')
+    // NOTE: while we try to execute to axios request here it works very fine
+    // but when we did the same in getInitialProps it failed
+    // so there is definitely some environmental changes here
+    // the code in getInitialProps is executed inside the server  
+    // so there is a difference when we execute our code from server vs client
+    // To solve this we have two methods
+    // - we can make the request to the specific microservice using the service ip
+    // - or we can make a call to nginx with the cookie and nginx routes the request to correct microservice
+
+    // Request from getInitialProps might be executed from the client or the server 
+    // we need to have some logic to figure out what our env is so we can use
+    // the correct domain
+
+
+    console.log('executed in client testing.. hello');
+
+    return <h1>Landing Page</h1>;
+
+
+};
+
+LandingPage.getInitialProps = async () => {
+    // getInitialProps is specific to next js 
+    // if we try to implement getinitialprops next js will call this function
+    // while its attempting to render our application on the server
+    // its our opportunity to fetch some data that the component needs during 
+    // this server side rendering process
+    // getinitialprops will be automatically called on server when nextjs decides to 
+    // show this component, once invoked any data that return from it in the form of 
+    // an object will be provided to our component as a prop
+    // then nextjs will get data from all the components rendered and sent back a 
+    // full response
+
+    // NOTE: hooks are used inside a component, getInitialProps is not a ccomponent
+    // its a plain function  
+
+    /*
+    const response = axios.get('/api/user/currentuser').catch((err) => {
+        console.log(err.message);
+    });
+
+    */
+
+    /*
+    console.log('executed in server testing.. hello');
+    return {};
+    */
+
+    // console.log('Helloo I am getInitialProps')
+    // return { message: 'hello' };
+
+    //return response.data;
+
+
+    // we need to have some logic to figure out what our env is so we can use
+    // the correct domain
+    if (typeof window === 'undefined') {
+        // this means the code is on the server 
+        // so any request made should be made to http://ingress-nginx.ingress-nginx...
+    } else {
+        // we are on the browser so requests can be made withe basic url
+
+    }
+    return {};
+
+};
+
+
+export default LandingPage;
