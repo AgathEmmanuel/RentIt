@@ -1,4 +1,5 @@
-import axios from "axios";
+//import axios from "axios";
+import customClient from "../callapi/custom-client";
 
 {/*
 export default () => {
@@ -39,7 +40,7 @@ const LandingPage = ({ currentUser }) => {
 
 };
 
-LandingPage.getInitialProps = async ({ req }) => {
+LandingPage.getInitialProps = async (context) => {
 
     // getInitialProps is specific to next js 
 
@@ -80,12 +81,17 @@ LandingPage.getInitialProps = async ({ req }) => {
 
     // we need to have some logic to figure out what our env is so we can use
     // the correct domain
+
+
+/*
+
     if (typeof window === 'undefined') {
         // this means the code is on the server 
         // so any request made should be made to http://ingress-nginx.ingress-nginx...
 
           // 'http://SERVICENAME.NAMESPACE.svc.cluster.local'
           // 'http://ingress-nginx-controller.svc.cluster.local/api/user/currentuser',
+
 
         const { data } = await axios.get(
           'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/user/currentuser',
@@ -107,6 +113,10 @@ LandingPage.getInitialProps = async ({ req }) => {
 
     }
     return {};
+ */
+
+    const { data } = await customClient(context).get('/api/user/currentuser');
+    return data;
 
 };
 
