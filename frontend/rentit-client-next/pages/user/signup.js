@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import useRequest from '../../hooks/use-request';
+import Router from 'next/router';
 
 
 
@@ -14,12 +15,15 @@ export default () => {
     method: 'post',
     body: {
       email,password
-    }
+    },
+    onSuccesfullLogin: () => Router.push('/')
+    // a callback that will be invoked anytime we make a callback successfully
   });
 
 
   const onSubmit = async event => {
       event.preventDefault(); // to make sure form does not try to submit itself in browser
+
 
       {/*
 
@@ -34,7 +38,17 @@ export default () => {
 
     */}
 
-    doRequest();
+    // Router.push('/');
+    // doRequest();
+    // we need to make sure user get navigated to home page only if login was succesful
+
+    await doRequest();
+    // no error is going to surface back on in here since we catch the error in userRequest hook
+
+    // Another approach is to add in an additional argument to a useRequest hook
+    // something like a callback function that gets invoked anytime we make a request successfully
+    
+    // Router.push('/');
 
 
   };
