@@ -31,6 +31,12 @@ import customClient from "../callapi/custom-client";
 // in getiniitialprops from index.js or any individual pages do not get automatically
 // invoked anymore
 
+// So to fix this issue we are going to get getinitialprops function and we are going 
+// to manually invoke it inside the custom appcomponents getinitialprops function  
+// so we are going to be fetching 2 sets of data one such data for 
+// the app component  and one such data for the landing page
+// and we are going to pass down all that data as props to the app component  
+// and chop some of that data and make sure that goes to the landing page
 
 
 const AppComponent = ({ Component, pageProps }) => {
@@ -47,11 +53,25 @@ AppComponent.getInitialProps = async appContext => {
     //console.log(Object.keys(appContext));
     //return {};
 
+    // console.log(appContext);
+    // you will see that the log will have a line or property on it
+    // Component: [Function: LandingPage]
+    // Component is a reference to [Function: LandingPage]
+    // and we can invoke the getinitialprops functing in that component 
+
     const client = customClient(appContext.ctx);
+    // ctx property is intended to go into individual page
+    // appContext is intended to go into AppComponent
 
     const { data } = await client.get('/api/user/currentuser');
 
+    const pageProps = await appContext.Component.getInitialProps(appContext.ctx);
+
+    console.log(pageProps);
+
+
     console.log(data);
+
 
     return data;
 };

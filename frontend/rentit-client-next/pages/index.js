@@ -123,7 +123,7 @@ LandingPage.getInitialProps = async (context) => {
 
 
 
-    // console.log('Landing page');
+    console.log('Landing page');
     // this was added to show that because we added getinitial props to the custom page
     // the old one is not getting called anymore  
 
