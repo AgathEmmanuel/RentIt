@@ -35,10 +35,13 @@ const LandingPage = ({ currentUser }) => {
 
     console.log('executed in client testing.. hello');
 
-    return <h1>Landing Page</h1>;
+    // return <h1>Landing Page</h1>;
+
+    return currentUser ? ( <h1> You are signed in </h1> ) : ( <h1> You are not signed in</h1> );
 
 
 };
+
 
 LandingPage.getInitialProps = async (context) => {
 
@@ -115,7 +118,17 @@ LandingPage.getInitialProps = async (context) => {
     return {};
  */
 
-    const { data } = await customClient(context).get('/api/user/currentuser');
+
+    //const { data } = await customClient(context).get('/api/user/currentuser')
+
+    const res = await customClient(context).get('/api/user/currentuser').catch((err) => {
+        console.log(err.message);
+    });
+    var data = 'null';
+    if (res) {
+        var data = res.data
+    }
+
     return data;
 
 };
