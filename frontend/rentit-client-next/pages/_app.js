@@ -62,10 +62,31 @@ AppComponent.getInitialProps = async appContext => {
     const client = customClient(appContext.ctx);
     // ctx property is intended to go into individual page
     // appContext is intended to go into AppComponent
+    
+    // now its executing getinitialprops function for both app component and for individual pages
+    // right now we have getinitialprops for our landing pag
+    // but we also have pages that do not have signin and signup function
+    // so we need to handle the case where getinitialprops is undefined
+    // if undefined we dont want to try and fetch any other data
+    // and this make sure it works fine without crashing pages like signin and signup
 
     const { data } = await client.get('/api/user/currentuser');
+    // so now we are getting some information that is common for every page
 
-    const pageProps = await appContext.Component.getInitialProps(appContext.ctx);
+    // and below we have logic to get informationg for particular pages
+
+    //const pageProps = await appContext.Component.getInitialProps(appContext.ctx);
+    let pageProps = {};
+    if (appContext.Component.getInitialProps) {
+
+        pageProps = await appContext.Component.getInitialProps(appContext.ctx);
+    }
+
+
+    // now we need to make sure to take pageProp, we take any data that we are
+    // fetching for the app component and we need to return all the stuff 
+    // and somehow get displayed up between the Header and componet of the page 
+    // that we are actually trying to show
 
     console.log(pageProps);
 
