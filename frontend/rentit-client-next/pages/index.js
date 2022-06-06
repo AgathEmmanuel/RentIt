@@ -31,7 +31,7 @@ const LandingPage = ({ currentUser }) => {
     // the correct domain
 
 
-    console.log(currentUser);
+    console.log('Landing page',currentUser,'is current user');
 
     console.log('executed in client testing.. hello');
 
@@ -122,19 +122,33 @@ LandingPage.getInitialProps = async (context) => {
     //const { data } = await customClient(context).get('/api/user/currentuser')
 
 
-
     console.log('Landing page');
     // this was added to show that because we added getinitial props to the custom page
     // the old one is not getting called anymore  
 
-
     const res = await customClient(context).get('/api/user/currentuser').catch((err) => {
         console.log(err.message);
     });
-    var data = 'null';
+    let data = 'null';
     if (res) {
-        var data = res.data
+        data = res.data
     }
+
+
+/*
+    try {
+    const res = await customClient(context).get('/api/user/currentuser')
+    }
+    catch(err) {
+        console.log(err.message);
+        var res = 'null'
+    };
+    let data = 'null';
+    if (res) {
+        data = res.data
+    }
+
+*/
 
     return data;
 

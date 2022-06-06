@@ -80,7 +80,16 @@ AppComponent.getInitialProps = async appContext => {
     // if undefined we dont want to try and fetch any other data
     // and this make sure it works fine without crashing pages like signin and signup
 
-    const { data } = await client.get('/api/user/currentuser');
+    // const { data } = await client.get('/api/user/currentuser');
+    const res = await client.get('/api/user/currentuser').catch((err) => {
+        console.log(err.message);
+    });
+    let data = 'null';
+    if (res) {
+        data = res.data
+    }
+
+
     // so now we are getting some information that is common for every page
 
     // and below we have logic to get informationg for particular pages
