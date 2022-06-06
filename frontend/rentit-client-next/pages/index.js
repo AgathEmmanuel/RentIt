@@ -1,5 +1,5 @@
 //import axios from "axios";
-import customClient from "../callapi/custom-client";
+// import customClient from "../callapi/custom-client";
 
 /*
 export default () => {
@@ -43,7 +43,7 @@ const LandingPage = ({ currentUser }) => {
 };
 
 
-LandingPage.getInitialProps = async (context) => {
+LandingPage.getInitialProps = async (context, client, currentUser) => {
 
     // getInitialProps is specific to next js 
 
@@ -122,6 +122,8 @@ LandingPage.getInitialProps = async (context) => {
     //const { data } = await customClient(context).get('/api/user/currentuser')
 
 
+    /*
+
     console.log('Landing page');
     // this was added to show that because we added getinitial props to the custom page
     // the old one is not getting called anymore  
@@ -134,6 +136,7 @@ LandingPage.getInitialProps = async (context) => {
         data = res.data
     }
 
+    */
 
 /*
     try {
@@ -150,7 +153,9 @@ LandingPage.getInitialProps = async (context) => {
 
 */
 
-    return data;
+    // return data;
+
+    return {};
 
 };
 
