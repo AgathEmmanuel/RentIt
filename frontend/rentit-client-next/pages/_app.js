@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import customClient from "../callapi/custom-client";
 
-
+import Header from "../components/header";
 
 // so we would want our header component to dynamically display values based 
 // on wheather or not the user is signed in  
@@ -42,7 +42,10 @@ import customClient from "../callapi/custom-client";
 const AppComponent = ({ Component, pageProps, currentUser }) => {
     return (
         <div> 
-        <h1>Header {currentUser.email} </h1>
+
+        {/* <h1>Header {currentUser.email} </h1> */}
+
+        <Header currentUser={currentUser}/>
         <Component {...pageProps} />
         </div>
     );
