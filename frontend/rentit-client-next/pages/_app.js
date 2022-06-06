@@ -39,14 +39,21 @@ import customClient from "../callapi/custom-client";
 // and chop some of that data and make sure that goes to the landing page
 
 
-const AppComponent = ({ Component, pageProps }) => {
+const AppComponent = ({ Component, pageProps, currentUser }) => {
     return (
         <div> 
-        <h1>Header</h1>
+        <h1>Header {currentUser.email} </h1>
         <Component {...pageProps} />
         </div>
     );
 };
+
+
+
+
+// now we need to make sure the pageProps info get passed into the page we are trying to display
+
+
 
 
 AppComponent.getInitialProps = async appContext => {
@@ -94,7 +101,12 @@ AppComponent.getInitialProps = async appContext => {
     console.log(data);
 
 
-    return data;
+    // return data;
+    return {
+        pageProps,
+        //currentUser: data.currentUser
+        ...data
+    }
 };
 
 export default AppComponent;
