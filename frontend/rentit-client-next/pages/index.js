@@ -11,7 +11,35 @@ export default () => {
 
 
 // const LandingPage = ({ message }) => {
-const LandingPage = ({ currentUser }) => {
+const LandingPage = ({ currentUser,products }) => {
+
+    // console.log(products)
+
+
+    const productList = products.map(product => {
+        return (
+            <tr key={product.id}>
+                <td>{product.productName}</td>
+                <td>{product.productPrize}</td>
+            </tr>
+        )
+    })
+    return (
+        <div>
+            <h1>Products</h1>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {productList}
+                </tbody>
+            </table>
+        </div>
+    )
 
     // console.log('I am the bot', message);
 
@@ -155,7 +183,11 @@ LandingPage.getInitialProps = async (context, client, currentUser) => {
 
     // return data;
 
-    return {};
+    // return {};
+
+    const { data } = await client.get('/api/product');
+
+    return { products: data };
 
 };
 

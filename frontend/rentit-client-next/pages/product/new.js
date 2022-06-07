@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useRequest from "../../hooks/use-request";
+import Router from "next/router";
 
 
 
@@ -15,7 +16,7 @@ const NewProduct = () => {
             productName,
             productPrize
         },
-        onSuccesfullLogin: (product) => console.log(product),
+        onSuccesfullLogin: () => Router.push('/'),
     })
 
 
