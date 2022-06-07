@@ -12,8 +12,8 @@ export default () => {
 
 // const LandingPage = ({ message }) => {
 const LandingPage = ({ currentUser }) => {
-    // console.log('I am the bot', message);
 
+    // console.log('I am the bot', message);
 
     // axios.get('/api/user/currentuser')
 

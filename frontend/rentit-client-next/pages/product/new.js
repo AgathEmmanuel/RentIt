@@ -1,15 +1,34 @@
 import { useState } from "react";
+import useRequest from "../../hooks/use-request";
 
 
 
 const NewProduct = () => {
 
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
+    const [productName, setName] = useState('');
+    const [productPrize, setPrice] = useState('');
+
+    const  { doRequest, errors } = useRequest({
+        url: '/api/product',
+        method: 'post',
+        body: {
+            productName,
+            productPrize
+        },
+        onSuccesfullLogin: (product) => console.log(product),
+    })
+
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        doRequest();
+    }
+
+
 
     // get triggered right when user clicks inside the input box and then outside
     const actionOnBlur = () => {
-        const value = parseFloat(price);
+        const value = parseFloat(productPrize);
 
         if (isNaN(value)) {
             return;
@@ -20,18 +39,19 @@ const NewProduct = () => {
     return (
     <div>
         <h1>Rent out a Product  </h1>
-        <form>
+        <form onSubmit={onSubmit}>
             <div className="form-group">
                 <label>Name</label>
-                <input value= {name} onChange={(e) => setName(e.target.value)} className="form-control" />
+                <input value= {productName} onChange={(e) => setName(e.target.value)} className="form-control" />
             </div>
             <div className="form-group">
                 <label>Prize</label>
                 <input 
-                value={price} 
+                value={productPrize} 
                 onBlur={actionOnBlur}
                 onChange={(e) => setPrice(e.target.value)} className="form-control" />
             </div>
+            {errors}
             <button className="btn btn-primary">Create</button>
         </form>
     </div>
