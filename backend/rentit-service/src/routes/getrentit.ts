@@ -9,7 +9,6 @@ const router =  express.Router();
 
 router.get('/api/rentit/:rentitId', loggedoffUserHandler, async (req: Request, res: Response) => {
     const rentitEntry = await Rentit.findById(req.params.rentitId).populate('product');
-    res.send({});
 
     if (!rentitEntry) {
         throw new routeNotFoundError();
