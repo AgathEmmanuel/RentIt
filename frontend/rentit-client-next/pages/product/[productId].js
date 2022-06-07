@@ -17,8 +17,8 @@ const ProductDisplay = ({product}) => {
         <div>
             <h1>{product.productName}</h1>
             <h3>Price: {product.productPrize}</h3>
-            {errors}
             <button onClick={doRequest} className="btn btn-primary">RentIt</button>
+            {errors}
         </div>
     );
 };

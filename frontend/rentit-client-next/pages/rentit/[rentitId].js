@@ -1,11 +1,22 @@
 import { useEffect } from "react";
 import { useState } from "react";
-
+//import StripeCheckout from "react-stripe-checkout";
+import useRequest from "../../hooks/use-request";
 
 const OrderDisplay = ({ rentit }) => {
 
     const [remainingTime, setRemainingTime] = useState(0);
 
+    const { doRequest, errors } = useRequest({
+        url: '/api/payment',
+        method: 'post',
+        body: {
+            rentitId: rentit.id,
+            token: "tok_mastercard"
+        },
+        onSuccesfullLogin: (payment) => console.log(payment)
+
+    })
     useEffect(() => {       // when the component first renders this function will be called
 
         const getRemainingTime = () => {
@@ -31,7 +42,21 @@ const OrderDisplay = ({ rentit }) => {
         return <div>The time for payment expired</div>
     }
 
-    return <div>Please pay the rent within: {remainingTime} seconds</div>;
+    return <div>Please pay the rent within: {remainingTime} seconds
+    {/*
+        <StripeCheckout 
+        token={(token) => console.log(token)}
+        stripeKey="pk_test_key"
+        amount = {rentit.product.price * 100}
+        email = {currentUser.email}
+        />
+        */}
+
+        <br />
+        <button onClick={doRequest} className="btn btn-primary">PayRent</button>
+        <br />
+        {errors}
+    </div>;
 
 };
 
