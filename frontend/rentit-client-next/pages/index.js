@@ -8,6 +8,7 @@ export default () => {
 
 */
 
+import Link from "next/link";
 
 
 // const LandingPage = ({ message }) => {
@@ -19,7 +20,11 @@ const LandingPage = ({ currentUser,products }) => {
     const productList = products.map(product => {
         return (
             <tr key={product.id}>
-                <td>{product.productName}</td>
+                <td>
+                    <Link href="/product/[productId]" as={`/product/${product.id}`}>
+                    <a>{product.productName}</a>
+                    </Link>
+                </td>
                 <td>{product.productPrize}</td>
             </tr>
         )
