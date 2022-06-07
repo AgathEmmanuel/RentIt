@@ -1,5 +1,6 @@
 
 import useRequest from "../../hooks/use-request";
+import Router from "next/router";
 
 const ProductDisplay = ({product}) => {
 
@@ -9,8 +10,9 @@ const ProductDisplay = ({product}) => {
         body: {
             productId: product.id
         },
-        onSuccesfullLogin: (rentit) => console.log(rentit)
-    })
+        onSuccesfullLogin: (rentit) => Router.push('/rentit/[rentitId]',`/rentit/${rentit.id}`),
+    });
+
     return (
         <div>
             <h1>{product.productName}</h1>

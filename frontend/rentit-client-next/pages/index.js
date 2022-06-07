@@ -62,7 +62,7 @@ const LandingPage = ({ currentUser,products }) => {
     // Request from getInitialProps might be executed from the client or the server 
     // we need to have some logic to figure out what our env is so we can use
     // the correct domain
-
+/*
 
     console.log('Landing page',currentUser,'is current user');
 
@@ -71,7 +71,7 @@ const LandingPage = ({ currentUser,products }) => {
     // return <h1>Landing Page</h1>;
 
     return currentUser ? ( <h1> You are signed in </h1> ) : ( <h1> You are not signed in</h1> );
-
+*/
 
 };
 
