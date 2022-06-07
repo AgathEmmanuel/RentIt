@@ -1,6 +1,32 @@
-const ProductDisplay = () => {
-    return <div>Product Display</div>
+
+import useRequest from "../../hooks/use-request";
+
+const ProductDisplay = ({product}) => {
+
+    const { doRequest, errors } = useRequest({
+        url: '/api/rentit',
+        method: 'post',
+        body: {
+            productId: product.id
+        },
+        onSuccesfullLogin: (rentit) => console.log(rentit)
+    })
+    return (
+        <div>
+            <h1>{product.productName}</h1>
+            <h3>Price: {product.productPrize}</h3>
+            {errors}
+            <button onClick={doRequest} className="btn btn-primary">RentIt</button>
+        </div>
+    );
 };
 
+
+ProductDisplay.getInitialProps = async (context, client) => {
+    const { productId } = context.query;
+    const { data } = await client.get(`/api/product/${productId}`)
+
+    return { product: data };
+}
 
 export default ProductDisplay;
