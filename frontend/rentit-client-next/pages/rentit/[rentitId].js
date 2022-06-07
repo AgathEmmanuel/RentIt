@@ -27,6 +27,9 @@ const OrderDisplay = ({ rentit }) => {
 
     }, [rentit]);  // rentit is passed in as a dependency
 
+    if (remainingTime < 0) {
+        return <div>The time for payment expired</div>
+    }
 
     return <div>Please pay the rent within: {remainingTime} seconds</div>;
 
