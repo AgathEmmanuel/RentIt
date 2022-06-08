@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 //import StripeCheckout from "react-stripe-checkout";
 import useRequest from "../../hooks/use-request";
+import Router from "next/router";
 
 const OrderDisplay = ({ rentit }) => {
 
@@ -14,7 +15,7 @@ const OrderDisplay = ({ rentit }) => {
             rentitId: rentit.id,
             token: "tok_mastercard"
         },
-        onSuccesfullLogin: (payment) => console.log(payment)
+        onSuccesfullLogin: () => Router.push('/rentit'),
 
     })
     useEffect(() => {       // when the component first renders this function will be called
