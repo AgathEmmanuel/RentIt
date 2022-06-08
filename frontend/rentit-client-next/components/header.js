@@ -6,6 +6,8 @@ export default ({ currentUser }) => {
     const links = [
         !currentUser && { label: 'Sign Up', href: '/user/signup' },
         !currentUser && { label: 'Sign In', href: '/user/signin' },
+        currentUser && { label: 'RentOut', href: '/product/new' },
+        currentUser && { label: 'RentIns', href: '/rentins' },
         currentUser && { label: 'Sign Out', href: '/user/signout' }
     ].filter(linksff => linksff) //filter out any entries that are false
      .map(({ label,href }) => {
