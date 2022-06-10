@@ -7,7 +7,7 @@ import { currentUserHandler } from "@rentit/shared-custom-package";
 
 const router = express.Router();
 
-router.get("/api/user/currentuser", currentUserHandler, loggedoffUserHandler, (req,res) => {
+router.get("/api/user/currentuser", currentUserHandler, (req,res) => {
 /*
     //if (!req.session || !req.session.jwt) {
     //the same logic can be written as req.session?.jwt

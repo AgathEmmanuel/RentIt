@@ -22,6 +22,9 @@ app.set("trust proxy", 1);
 
 app.use(json());
 app.use(cookieSession({ signed: false, secure: process.env.NODE_ENV !== 'test' }));
+// to disable https
+app.use(cookieSession({ signed: false, secure: false }));
+// to enable https
 //app.use(cookieSession({ signed: false, secure: true }));
 // disabling the cookie encryption which is present by default
 // and this will enable the different microservices to consume

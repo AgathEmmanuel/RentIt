@@ -22,7 +22,11 @@ app.set("trust proxy", 1);
 // so we manually ask express to trust the proxy
 
 app.use(json());
-app.use(cookieSession({ signed: false, secure: process.env.NODE_ENV !== 'test' }));
+//app.use(cookieSession({ signed: false, secure: process.env.NODE_ENV !== 'test' }));
+// if you need to enable https with cookie session
+// to disable https
+app.use(cookieSession({ signed: false, secure: false }));
+// to enable https
 //app.use(cookieSession({ signed: false, secure: true }));
 // disabling the cookie encryption which is present by default
 // and this will enable the different microservices to consume
