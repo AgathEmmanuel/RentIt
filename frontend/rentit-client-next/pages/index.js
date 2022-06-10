@@ -8,6 +8,7 @@ export default () => {
 
 */
 
+
 import Link from "next/link";
 
 
@@ -15,36 +16,32 @@ import Link from "next/link";
 const LandingPage = ({ currentUser,products }) => {
 
     // console.log(products)
-
-
-    const productList = products.map(product => {
+    const productLi = products.map(product => {
         return (
-            <tr key={product.id}>
-                <td>
-                    <Link href="/product/[productId]" as={`/product/${product.id}`}>
-                    <a>{product.productName}</a>
-                    </Link>
-                </td>
-                <td>{product.productPrize}</td>
-            </tr>
-        )
+            <div key={product.id}>
+             <div className="w-75 mb-4">
+             <div className="card" >
+            <div className="card-body">
+            <h5 className="card-title">{product.productName}</h5>
+            <h4 className="card-title">Prize: {product.productPrize}</h4>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <Link href="/product/[productId]" as={`/product/${product.id}`}>
+            <div className="text-center">
+            <a className="btn btn-secondary">RentIn</a>
+            </div>
+            </Link>
+            </div>
+            </div>
+            </div>
+            </div>
+            )
     })
-    return (
-        <div>
-            <h1>Products</h1>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {productList}
-                </tbody>
-            </table>
+        return (
+            <div>
+            {productLi}
         </div>
-    )
+
+        )
 
     // console.log('I am the bot', message);
 
