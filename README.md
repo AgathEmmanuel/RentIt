@@ -32,6 +32,9 @@ A Renting platform
 - [X] Containerization with Google Cloud Build and Container Registry  
 - [ ] Helm chart for the project for Day 1 operations  
 - [ ] Operators for the project for Day 2 operations  
+- [ ] Data platform for Rental, Wholesale and Retail data analytics  
+- [ ] ML platform for Rental Dynamic pricing, Stocking and Recomendations  
+
 
 
 
