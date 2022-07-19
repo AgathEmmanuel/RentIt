@@ -1,4 +1,9 @@
-# Operations  
+# DevOps Platform on Kubernetes  
+
+- Build a Scalable CI/CD for developer workflow  
+- Demo Project template providing single-command instantiation of API services from CI pipeline, custom Docker images, policy-as-code and other tooling  
+- Reducing a new develpers time to productivity  
+- Self service portals along with IAM, OAuth2.0 and automated configuration of API gateways  
 
 ## CI CD  Set up with Github  
 

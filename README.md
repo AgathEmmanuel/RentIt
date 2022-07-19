@@ -119,16 +119,23 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - RentOrderExpired
 - RentPayCreated  
 
-# Technologies-Used  
+# Technologies to be Used  
 
-- React  
-- Node  
+- React, Next   
+- Node, Python, Golang
 - MongoDB  
 - Redis  
-- NATS Streaming Server  
+- NATS Streaming, PubSub
 - Terraform  
 - GCP  
 - GKE
+- Microservices, Rest, gRPC  
 - Cloud Build  
 - Container Registry  
-- Microservices  
+- PyTorch  
+- Kapitan  
+- ArgoCD, Atlantis  
+- Spark, Kubeflow & Ray.io  
+- CloudSQL, BigTable, Postgres  
+- Prometheus, Grafana  
+

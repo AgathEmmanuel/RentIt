@@ -7,6 +7,7 @@
 - Reporting dashboard (business insights)  
 - ETL pipleline to extract data from oltp and nosql load to datawarehouse  
 
+
 # Data Ops  
 
 - involves utilizing, transforming, and orchestrating data workflows.  

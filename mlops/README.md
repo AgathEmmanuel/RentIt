@@ -1,7 +1,7 @@
 # ML platform  
 
 - deploy ml model with spark connecting to data warehouse  
-- build an ML pipeline for the model  
+- build an sclable ML pipeline for the model  
 
 
 
