@@ -63,15 +63,15 @@ build:
 deploy:
   kubectl:
     manifests:
-    - ./operations/k8s/dev/auth-deploy.yaml
-    - ./operations/k8s/dev/auth-mongodb-deploy.yaml
-    - ./operations/k8s/dev/product-deploy.yaml
-    - ./operations/k8s/dev/product-mongodb-deploy.yaml
-    - ./operations/k8s/dev/rentit-deploy.yaml
-    - ./operations/k8s/dev/rentit-mongodb-deploy.yaml
-    - ./operations/k8s/dev/expiration-deploy.yaml
-    - ./operations/k8s/dev/expiration-redis-deploy.yaml
-    - ./operations/k8s/dev/payment-deploy.yaml
-    - ./operations/k8s/dev/payment-mongodb-deploy.yaml
-    - ./operations/k8s/dev/frontend-deploy.yaml
-    - ./operations/k8s/dev/nats-deploy.yaml
+    - ./devops/k8s/dev/auth-deploy.yaml
+    - ./devops/k8s/dev/auth-mongodb-deploy.yaml
+    - ./devops/k8s/dev/product-deploy.yaml
+    - ./devops/k8s/dev/product-mongodb-deploy.yaml
+    - ./devops/k8s/dev/rentit-deploy.yaml
+    - ./devops/k8s/dev/rentit-mongodb-deploy.yaml
+    - ./devops/k8s/dev/expiration-deploy.yaml
+    - ./devops/k8s/dev/expiration-redis-deploy.yaml
+    - ./devops/k8s/dev/payment-deploy.yaml
+    - ./devops/k8s/dev/payment-mongodb-deploy.yaml
+    - ./devops/k8s/dev/frontend-deploy.yaml
+    - ./devops/k8s/dev/nats-deploy.yaml
