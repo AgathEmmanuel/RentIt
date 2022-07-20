@@ -119,7 +119,7 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - RentOrderExpired
 - RentPayCreated  
 
-# Technologies to be Used  
+# Technologies under Consideration  
 
 - React, Next   
 - Node, Python, Golang
