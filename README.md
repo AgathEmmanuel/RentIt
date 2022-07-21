@@ -122,10 +122,10 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 # Technologies under Consideration  
 
 - React, Next   
-- Node, Python, Golang
+- Node, Python, Golang  
 - MongoDB  
 - Redis  
-- NATS Streaming, PubSub
+- NATS Streaming, PubSub, ActiveMQ, Kafka    
 - Terraform  
 - GCP  
 - GKE
@@ -136,6 +136,6 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - Kapitan  
 - ArgoCD, Atlantis  
 - Spark, Kubeflow & Ray.io  
-- CloudSQL, BigTable, Postgres  
+- CloudSQL, Bigquery, BigTable, Postgres  
 - Prometheus, Grafana  
 

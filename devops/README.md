@@ -88,3 +88,7 @@ gcloud container clusters get-credentials <cluster-name>
 [https://kubernetes.io/docs/concepts/services-networking/ingress/](https://kubernetes.io/docs/concepts/services-networking/ingress/)  
 
 [https://github.com/istio/istio/issues/28623](https://github.com/istio/istio/issues/28623)  
+
+
+[https://medium.com/@splisson/helm-vs-kapitan-vs-kustomize-1c14018faecc](https://medium.com/@splisson/helm-vs-kapitan-vs-kustomize-1c14018faecc)  
+[Introduction to Kapitan | Rawkode Live](https://youtu.be/8QZvgJi0vII)  
