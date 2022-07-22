@@ -8,7 +8,11 @@
 - ETL pipleline to extract data from oltp and nosql load to datawarehouse  
 
 
-# Data Ops  
+#  Data Lakes and Data Warehouses with GCP  
+
+
+
+# Data Ops Overview  
 
 - involves utilizing, transforming, and orchestrating data workflows.  
 - use processes and tools to get data to people quickly.   
@@ -128,3 +132,6 @@ Accessibility 	Highly accessible and quick to update 	More complicated and costl
 [https://www.snowflake.com/guides/what-enterprise-data-warehouse](https://www.snowflake.com/guides/what-enterprise-data-warehouse)  
 [Data Fabric Explained](https://youtu.be/0Zzn4eVbqfk)  
 
+
+
+[https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub](https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub)  

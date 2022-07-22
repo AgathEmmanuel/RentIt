@@ -1,11 +1,19 @@
 # ML platform  
 
+
+- Rental recommendations using CloudSQL and spark  
 - deploy ml model with spark connecting to data warehouse  
 - build an sclable ML pipeline for the model  
 
 
 
-# ML Ops  
+# Agenda  
+
+- Business applications  
+
+
+
+# ML Ops Overview    
 
 MLOps is concerned with deploying the ML system and the continous evoulution of the models  
 

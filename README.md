@@ -8,6 +8,17 @@ A Renting platform
 
 <img src="https://raw.githubusercontent.com/AgathEmmanuel/RentIt/dev/design/image/Rentit-Architecture.png" width="100%" >  
 
+# Description  
+
+A Project focused on learning and experimenting with techstacks and technologies  
+to get perspectives on how **StartUps should function with an Enterprise Mindset**   
+
+---
+"Enterprise architecture (EA) is the practice of analyzing, designing, planning and  
+implementing enterprise analysis to successfully execute on business strategies."   
+---
+
+
 
 # Features  
 
@@ -37,7 +48,30 @@ A Renting platform
 
 
 
+# Enterprise Architecture for Startups  
 
+1. Vision and Planning  
+2. Business Architecture   
+3. Data Architecture   
+4. Information system and Technology Architecture  
+5. Governance  
+6. Migration plannings  
+7. Change Management  
+8. Multicloud portability  
+
+
+
+- well architected startup can be a lot easier to scale and pivot  
+- Business => Data => Application => Technology  
+- having a revolving door policy for developers  
+- multi-Speed architecture  
+- microServices architecture   
+- technical debt logging 
+- designing business infrastructure and organizational structure based on vision, strategic intent, and function  
+- provide the framework, tools, and perspectives to take a startup or business from its current state to its target state  
+
+
+"a well-defined practice for conducting enterprise analysis, design, planning, and implementation, using a holistic approach at all times, for the successful development and execution of strategy. Enterprise architecture applies architecture principles and practices to guide organizations through the business, information, process, and technology changes necessary to execute their strategies." - OpenGroup
 
 # Business Properties  
 
@@ -135,7 +169,7 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - PyTorch  
 - Kapitan  
 - ArgoCD, Atlantis  
-- Spark, Kubeflow & Ray.io  
+- Kubeflow & Ray.io, DataProc (Spark)      
 - CloudSQL, Bigquery, BigTable, Postgres  
 - Prometheus, Grafana  
 
