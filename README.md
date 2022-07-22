@@ -11,7 +11,7 @@ A Renting platform
 # Description  
 
 A Project focused on learning and experimenting with techstacks and technologies  
-to get perspectives on how **StartUps should function with an Enterprise Mindset**   
+to get perspectives on how **StartUps can function with an Enterprise Mindset**   
 
 "Enterprise architecture (EA) is the practice of analyzing, designing, planning and implementing enterprise analysis to successfully execute on business strategies."   
 
