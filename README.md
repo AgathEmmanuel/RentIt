@@ -67,9 +67,6 @@ to get perspectives on how **StartUps should function with an Enterprise Mindset
 - designing business infrastructure and organizational structure based on vision, strategic intent, and function  
 - provide the framework, tools, and perspectives to take a startup or business from its current state to its target state  
 
-
-"a well-defined practice for conducting enterprise analysis, design, planning, and implementation, using a holistic approach at all times, for the successful development and execution of strategy. Enterprise architecture applies architecture principles and practices to guide organizations through the business, information, process, and technology changes necessary to execute their strategies." - OpenGroup
-
 # Business Properties  
 
 - User can just rent out products or list there products for rent  
