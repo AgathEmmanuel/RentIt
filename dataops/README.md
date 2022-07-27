@@ -8,6 +8,42 @@
 - ETL pipleline to extract data from oltp and nosql load to datawarehouse  
 
 
+
+## Steps  
+- setting up the database  
+- design OLTP database and pouplate with data  
+- load incremental data into database  
+- setup NoSql database for storing catalog data of Rentit website  
+- setup MySql database for storing transactional data like sale & inventory  
+- load and query data in NoSql database  
+- building datawarehouse  
+- design schema of datawarehouse base on OLTP and NoSQL datbase  
+- create schema, then load data into facts and dimesion tables  
+- automate loading daily incremental data  
+- create Cubes and Rollups  
+- data analytics  
+- create data analytics dashboard  
+- create ETL pipeline with Airflow  
+- extract data from OLTP and NoSQL database  
+- transform OLTP data and load transformed data  
+- create spark connection to data warehouse  
+- deploy ML model on SparkML   
+
+
+## Tools  
+
+- OLTP database : MySQL  
+- NoSql database : MongoDB  
+- Production Data warehouse : Cloud SQL  
+- Staging : Data warehouse  PostgreSQL
+- Big data platform : Hadoop on Dataproc  
+- Big data analytics platform  : Spark on Dataproc  
+- Data Pipelines  : Apache Kafka and Airflow
+
+
+Data is periodically extracted from these two databases and put into the staging data warehouse running on PostgreSQL.  
+
+
 #  Data Lakes and Data Warehouses with GCP  
 
 
@@ -110,6 +146,15 @@ Accessibility 	Highly accessible and quick to update 	More complicated and costl
 
 
 
+## Exercise Controlled Freedom when dealing with stakeholders  
+
+Alex has built decentralized access to data at Fox on a foundation he calls “controlled freedom.” In fact, he believes using your data team as the single source of truth within an organization actually creates the biggest silo.  
+
+"If you think about a centralized data reporting structure, where you used to come in, open a ticket, and wait for your turn, by the time you get an answer, it’s often too late,” Alex said. Businesses are evolving and growing at a pace I’ve never seen before, and decisions are being made at a blazing speed. You have to have data at your fingertips to make the correct decision."  
+
+
+
+The data mesh is a type of data platform architecture that embraces the ubiquity of data in the enterprise by leveraging a domain-driven, self-serve design.  
 
 
 
@@ -135,3 +180,12 @@ Accessibility 	Highly accessible and quick to update 	More complicated and costl
 
 
 [https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub](https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub)  
+
+
+[https://www.sqlshack.com/things-you-should-avoid-when-designing-a-data-warehouse/](https://www.sqlshack.com/things-you-should-avoid-when-designing-a-data-warehouse/)  
+
+
+
+[https://medium.com/fox-tech/data-reliability-at-scale-how-fox-digital-architected-its-modern-data-stack-d04c1f7ce201](https://medium.com/fox-tech/data-reliability-at-scale-how-fox-digital-architected-its-modern-data-stack-d04c1f7ce201)  
+
+

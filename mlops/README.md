@@ -6,10 +6,18 @@
 - build an sclable ML pipeline for the model  
 
 
+- Data ingestion and featurization  (Spark, Kafka, etc..)  
+- Training  (Tensorflow, Pytorch, etc)  
+- Serving  
+
+- How fast can we update the model  
+
+
 
 # Agenda  
 
 - Business applications  
+
 
 
 
@@ -92,3 +100,7 @@ ML Ops Tools:
 [https://analyticsindiamag.com/how-can-ai-iot-data-help-streamline-vehicle-rental-services/](https://analyticsindiamag.com/how-can-ai-iot-data-help-streamline-vehicle-rental-services/)  
 [https://towardsdatascience.com/ai-and-real-state-renting-in-amsterdam-part-1-5fce18238dbc](https://towardsdatascience.com/ai-and-real-state-renting-in-amsterdam-part-1-5fce18238dbc)  
 [https://venturebeat.com/2021/11/04/using-ai-to-verify-renter-eligibility-and-risk/](https://venturebeat.com/2021/11/04/using-ai-to-verify-renter-eligibility-and-risk/)  
+
+
+
+
