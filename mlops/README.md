@@ -14,9 +14,28 @@
 
 
 
-# Agenda  
+## Business Requirements
 
-- Business applications  
+- Recommendation of rentals based on preferences  
+
+## Recommendation starategies  
+- predict the rating the given user will give for a given rental product  
+- make use of existing user ratings  
+- similar minded users will have similar taste  
+- actually how good is the product  
+- how frequent should the predictive rating be calculated  
+- stream processing can be used if rental recommendation have to updated in real time  
+- batch processing can be used if rental recommendation have to updated only once per day  
+- the predictive rating should be computed using a hadoop cluster  
+- the predicted ratings will be stored in cloudSQL  
+- sparkML can be used to run the ML job on DataProc  
+- sparkML = feature prep + model training  
+- save results of feature prep job in TF compatible format  
+- create a TF job for training  
+- create kubefow or argoflow pipeline to train the model  
+
+
+
 
 
 
@@ -101,6 +120,12 @@ ML Ops Tools:
 [https://towardsdatascience.com/ai-and-real-state-renting-in-amsterdam-part-1-5fce18238dbc](https://towardsdatascience.com/ai-and-real-state-renting-in-amsterdam-part-1-5fce18238dbc)  
 [https://venturebeat.com/2021/11/04/using-ai-to-verify-renter-eligibility-and-risk/](https://venturebeat.com/2021/11/04/using-ai-to-verify-renter-eligibility-and-risk/)  
 
+
+[https://cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster)  
+
+[https://www.slideshare.net/databricks/migrating-apache-spark-ml-jobs-to-spark-tensorflow-on-kubeflow](https://www.slideshare.net/databricks/migrating-apache-spark-ml-jobs-to-spark-tensorflow-on-kubeflow)
+[https://learnopencv.com/pytorch-to-tensorflow-model-conversion/](https://learnopencv.com/pytorch-to-tensorflow-model-conversion/)  
+[https://neptune.ai/blog/moving-from-tensorflow-to-pytorch](https://neptune.ai/blog/moving-from-tensorflow-to-pytorch)  
 
 
 

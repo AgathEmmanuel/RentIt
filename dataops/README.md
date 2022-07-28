@@ -8,8 +8,13 @@
 - ETL pipleline to extract data from oltp and nosql load to datawarehouse  
 
 
+## Business Requirements  
+
+- Recommendation of rentals based on preferences  
+
 
 ## Steps  
+
 - setting up the database  
 - design OLTP database and pouplate with data  
 - load incremental data into database  
