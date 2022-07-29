@@ -20,6 +20,14 @@
 
 
 
+# steps  
+- Experimentation/Development  
+- Training pipeline CI/CD  
+- Continous Training  
+- Model Serving CI/CD  
+- Serving and Monitoring  
+
+
 
 # ML Ops Overview    
 
