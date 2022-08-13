@@ -25,7 +25,6 @@ to get perspectives on how **StartUps can function with an Enterprise Mindset**
 - [ ] media service: add images of products  
 - [ ] comment service: Give comments on Products  
 - [X] payment service: pay rent for the product  
-- [ ] distributed transactions  
 - [ ] currency conversion  
 - [X] rentit service: rent posted products  
 - [X] frontend: basic-skeleton
@@ -41,7 +40,7 @@ to get perspectives on how **StartUps can function with an Enterprise Mindset**
 - [ ] Helm chart for the project for Day 1 operations  
 - [ ] Operators for the project for Day 2 operations  
 - [ ] Data platform for Rental, Wholesale and Retail data analytics  
-- [ ] ML platform for Rental Dynamic pricing, Stocking and Recomendations  
+- [ ] ML platform for Rental Dynamic pricing, Predictive pricing, Predictive Serarch, Customer Profiling, Stocking and Recomendations  
 
 
 
@@ -66,6 +65,19 @@ to get perspectives on how **StartUps can function with an Enterprise Mindset**
 - technical debt logging 
 - designing business infrastructure and organizational structure based on vision, strategic intent, and function  
 - provide the framework, tools, and perspectives to take a startup or business from its current state to its target state  
+
+# Distributed System fundamentals  
+- Data Durability and Consistency  
+- Replication  
+- Partitioning  
+- Consensus  
+- Storage and Retrieval  
+- Data Models and Query Languages  
+- Encoding and Evolution  
+- Distributed Transactions  
+- Reliable, Scalable, Mantainable  
+- Batch Processing  
+- Stream Processing  
 
 # Business Properties  
 
