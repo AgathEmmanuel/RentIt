@@ -16,6 +16,15 @@ to get perspectives on how **StartUps can function with an Enterprise Mindset**
 "Enterprise architecture (EA) is the practice of analyzing, designing, planning and implementing enterprise analysis to successfully execute on business strategies."   
 
 
+# Key Considerations  
+
+- Distributed resilient system design
+- Continous Integration / Continous Deployment pipelines
+- Data pipelines
+- Continous Training pipelines
+- Cybersecurity
+
+
 
 # Features  
 
@@ -174,8 +183,37 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 - Container Registry  
 - PyTorch  
 - Kapitan  
-- ArgoCD, Atlantis  
-- Kubeflow & Ray.io, DataProc (Spark)      
-- CloudSQL, Bigquery, BigTable, Postgres  
+- ArgoCD
+- Kubeflow, DataProc (Spark)      
+- Bigquery, CloudSQL, Postgres  
 - Prometheus, Grafana  
 
+
+
+# Links  
+
+[https://omscs.gatech.edu/cs-7210-distributed-computing](https://omscs.gatech.edu/cs-7210-distributed-computing)  
+[https://www.edx.org/course/modern-distributed-systems](https://www.edx.org/course/modern-distributed-systems)  
+[https://www.distributedsystemscourse.com/](https://www.distributedsystemscourse.com/)  
+[https://www.educative.io/blog/distributed-system-design-patterns](https://www.educative.io/blog/distributed-system-design-patterns)  
+[Distributed Systems Course | Distributed Computing @ University Cambridge | Full Course: 6 Hours!](https://youtu.be/sGzQT_ZrsFI)  
+[https://www.atlassian.com/microservices/microservices-architecture/distributed-architecture](https://www.atlassian.com/microservices/microservices-architecture/distributed-architecture)  
+[https://medium.com/@kenlynterai/microservices-and-distributed-systems-36a90d5d8ce](https://medium.com/@kenlynterai/microservices-and-distributed-systems-36a90d5d8ce)  
+[https://github.com/aphyr/distsys-class](https://github.com/aphyr/distsys-class)  
+[https://link.springer.com/content/pdf/10.1007%2Fs00607-016-0508-7.pdf](https://link.springer.com/content/pdf/10.1007%2Fs00607-016-0508-7.pdf)  
+[https://medium.com/baseds/many-nodes-one-distributed-system-9921f85205c4](https://medium.com/baseds/many-nodes-one-distributed-system-9921f85205c4)  
+[https://microservices.io](https://microservices.io)  
+[MPI - Parallel and Distributed Computing Course: 7 Hours!](https://youtu.be/0GkPn7RFxcA)  
+
+[https://www.snowflake.com/guides/data-pipeline](https://www.snowflake.com/guides/data-pipeline)  
+[https://hazelcast.com/glossary/data-pipeline/](https://hazelcast.com/glossary/data-pipeline/)  
+
+[https://www.sigmoid.com/blogs/apache-spark-on-dataproc-vs-google-bigquery/](https://www.sigmoid.com/blogs/apache-spark-on-dataproc-vs-google-bigquery/)  
+
+[https://www.uber.com/blog//uber-big-data-platform](https://www.uber.com/blog//uber-big-data-platform)  
+
+
+[https://fullstackdeeplearning.com/spring2021/lecture-6/](https://fullstackdeeplearning.com/spring2021/lecture-6/)  
+
+
+[https://owasp.org/www-project-api-security/](https://owasp.org/www-project-api-security/)  
