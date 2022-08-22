@@ -203,17 +203,23 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 [https://link.springer.com/content/pdf/10.1007%2Fs00607-016-0508-7.pdf](https://link.springer.com/content/pdf/10.1007%2Fs00607-016-0508-7.pdf)  
 [https://medium.com/baseds/many-nodes-one-distributed-system-9921f85205c4](https://medium.com/baseds/many-nodes-one-distributed-system-9921f85205c4)  
 [https://microservices.io](https://microservices.io)  
+[Kubernetes Native Applications](https://youtu.be/0Sdj9UBbM_s)  
+[https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8](https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8)  
 [MPI - Parallel and Distributed Computing Course: 7 Hours!](https://youtu.be/0GkPn7RFxcA)  
-
 [https://www.snowflake.com/guides/data-pipeline](https://www.snowflake.com/guides/data-pipeline)  
 [https://hazelcast.com/glossary/data-pipeline/](https://hazelcast.com/glossary/data-pipeline/)  
-
 [https://www.sigmoid.com/blogs/apache-spark-on-dataproc-vs-google-bigquery/](https://www.sigmoid.com/blogs/apache-spark-on-dataproc-vs-google-bigquery/)  
-
 [https://www.uber.com/blog//uber-big-data-platform](https://www.uber.com/blog//uber-big-data-platform)  
-
-
+[https://eng.lyft.com/lyftlearn-ml-model-training-infrastructure-built-on-kubernetes-aef8218842bb](https://eng.lyft.com/lyftlearn-ml-model-training-infrastructure-built-on-kubernetes-aef8218842bb)  
+[https://eng.lyft.com/ml-feature-serving-infrastructure-at-lyft-d30bf2d3c32a](https://eng.lyft.com/ml-feature-serving-infrastructure-at-lyft-d30bf2d3c32a)  
 [https://fullstackdeeplearning.com/spring2021/lecture-6/](https://fullstackdeeplearning.com/spring2021/lecture-6/)  
-
-
 [https://owasp.org/www-project-api-security/](https://owasp.org/www-project-api-security/)  
+[https://semaphoreci.com/blog/release-management-microservices](https://semaphoreci.com/blog/release-management-microservices)  
+[https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin](https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin)  
+[https://semaphoreci.com/blog/cicd-pipeline](https://semaphoreci.com/blog/cicd-pipeline)  
+[https://semaphoreci.com/cicd](https://semaphoreci.com/cicd)  
+[https://semaphoreci.com/blog/domain-driven-design-microservices](https://semaphoreci.com/blog/domain-driven-design-microservices)  
+[restful-microservices-using-node-js-and-express](https://www.coursera.org/specializations/restful-microservices-using-node-js-and-express)  
+[https://semaphoreci.medium.com/testing-strategies-for-microservices-d7ba104ebfdd](https://semaphoreci.medium.com/testing-strategies-for-microservices-d7ba104ebfdd)  
+[https://www.onixnet.com/insights/google-cloud-data-pipeline](https://www.onixnet.com/insights/google-cloud-data-pipeline)   
+
