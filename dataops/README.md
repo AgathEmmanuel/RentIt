@@ -161,36 +161,3 @@ Alex has built decentralized access to data at Fox on a foundation he calls “c
 
 The data mesh is a type of data platform architecture that embraces the ubiquity of data in the enterprise by leveraging a domain-driven, self-serve design.  
 
-
-
-# Links  
-
-[https://analyticsindiamag.com/data-mesh-vs-data-fabric-whats-the-difference/](https://analyticsindiamag.com/data-mesh-vs-data-fabric-whats-the-difference/)  
-[https://solutionsreview.com/data-management/the-best-cloud-data-warehouse-solutions-2/](https://solutionsreview.com/data-management/the-best-cloud-data-warehouse-solutions-2/)  
-[https://solutionsreview.com/business-intelligence/the-best-self-service-analytics-tools-and-software/](https://solutionsreview.com/business-intelligence/the-best-self-service-analytics-tools-and-software/)  
-[https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/](https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/)  
-[https://martinfowler.com/articles/data-monolith-to-mesh.html](https://martinfowler.com/articles/data-monolith-to-mesh.html)  
-[https://martinfowler.com/articles/data-mesh-principles.html](https://martinfowler.com/articles/data-mesh-principles.html)  
-[https://www.talend.com/resources/data-lake-vs-data-warehouse/](https://www.talend.com/resources/data-lake-vs-data-warehouse/)  
-[https://www.chaossearch.io/blog/data-lake-vs-data-mesh](https://www.chaossearch.io/blog/data-lake-vs-data-mesh)  
-[https://www.ibm.com/in-en/analytics/data-fabric](https://www.ibm.com/in-en/analytics/data-fabric)  
-[https://www.ibm.com/topics/data-mesh](https://www.ibm.com/topics/data-mesh)  
-[https://www.k2view.com/what-is-data-fabric](https://www.k2view.com/what-is-data-fabric)  
-[https://en.wikipedia.org/wiki/Enterprise_data_management](https://en.wikipedia.org/wiki/Enterprise_data_management)  
-[https://www.chainsys.com/case-studies/edm-edw-and-data-science-with-40-applications](https://www.chainsys.com/case-studies/edm-edw-and-data-science-with-40-applications)  
-[https://tdan.com/the-enterprise-data-model-a-key-ingredient-for-successful-data-warehousing/4252](https://tdan.com/the-enterprise-data-model-a-key-ingredient-for-successful-data-warehousing/4252)  
-[https://www.snowflake.com/guides/what-enterprise-data-warehouse](https://www.snowflake.com/guides/what-enterprise-data-warehouse)  
-[Data Fabric Explained](https://youtu.be/0Zzn4eVbqfk)  
-
-
-
-[https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub](https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub)  
-
-
-[https://www.sqlshack.com/things-you-should-avoid-when-designing-a-data-warehouse/](https://www.sqlshack.com/things-you-should-avoid-when-designing-a-data-warehouse/)  
-
-
-
-[https://medium.com/fox-tech/data-reliability-at-scale-how-fox-digital-architected-its-modern-data-stack-d04c1f7ce201](https://medium.com/fox-tech/data-reliability-at-scale-how-fox-digital-architected-its-modern-data-stack-d04c1f7ce201)  
-
-

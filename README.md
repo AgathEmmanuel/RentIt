@@ -223,3 +223,66 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 [https://semaphoreci.medium.com/testing-strategies-for-microservices-d7ba104ebfdd](https://semaphoreci.medium.com/testing-strategies-for-microservices-d7ba104ebfdd)  
 [https://www.onixnet.com/insights/google-cloud-data-pipeline](https://www.onixnet.com/insights/google-cloud-data-pipeline)   
 
+
+
+
+[https://analyticsindiamag.com/data-mesh-vs-data-fabric-whats-the-difference/](https://analyticsindiamag.com/data-mesh-vs-data-fabric-whats-the-difference/)  
+[https://solutionsreview.com/data-management/the-best-cloud-data-warehouse-solutions-2/](https://solutionsreview.com/data-management/the-best-cloud-data-warehouse-solutions-2/)  
+[https://solutionsreview.com/business-intelligence/the-best-self-service-analytics-tools-and-software/](https://solutionsreview.com/business-intelligence/the-best-self-service-analytics-tools-and-software/)  
+[https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/](https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/)  
+[https://martinfowler.com/articles/data-monolith-to-mesh.html](https://martinfowler.com/articles/data-monolith-to-mesh.html)  
+[https://martinfowler.com/articles/data-mesh-principles.html](https://martinfowler.com/articles/data-mesh-principles.html)  
+[https://www.talend.com/resources/data-lake-vs-data-warehouse/](https://www.talend.com/resources/data-lake-vs-data-warehouse/)  
+[https://www.chaossearch.io/blog/data-lake-vs-data-mesh](https://www.chaossearch.io/blog/data-lake-vs-data-mesh)  
+[https://www.ibm.com/in-en/analytics/data-fabric](https://www.ibm.com/in-en/analytics/data-fabric)  
+[https://www.ibm.com/topics/data-mesh](https://www.ibm.com/topics/data-mesh)  
+[https://www.k2view.com/what-is-data-fabric](https://www.k2view.com/what-is-data-fabric)  
+[https://en.wikipedia.org/wiki/Enterprise_data_management](https://en.wikipedia.org/wiki/Enterprise_data_management)  
+[https://www.chainsys.com/case-studies/edm-edw-and-data-science-with-40-applications](https://www.chainsys.com/case-studies/edm-edw-and-data-science-with-40-applications)  
+[https://tdan.com/the-enterprise-data-model-a-key-ingredient-for-successful-data-warehousing/4252](https://tdan.com/the-enterprise-data-model-a-key-ingredient-for-successful-data-warehousing/4252)  
+[https://www.snowflake.com/guides/what-enterprise-data-warehouse](https://www.snowflake.com/guides/what-enterprise-data-warehouse)  
+[Data Fabric Explained](https://youtu.be/0Zzn4eVbqfk)  
+
+
+
+[https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub](https://cloud.google.com/architecture/using-apache-spark-dstreams-with-dataproc-and-pubsub)  
+
+
+[https://www.sqlshack.com/things-you-should-avoid-when-designing-a-data-warehouse/](https://www.sqlshack.com/things-you-should-avoid-when-designing-a-data-warehouse/)  
+
+
+
+[https://medium.com/fox-tech/data-reliability-at-scale-how-fox-digital-architected-its-modern-data-stack-d04c1f7ce201](https://medium.com/fox-tech/data-reliability-at-scale-how-fox-digital-architected-its-modern-data-stack-d04c1f7ce201)  
+
+
+
+
+
+
+[https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)  
+[https://cloud.google.com/architecture/architecture-for-mlops-using-tfx-kubeflow-pipelines-and-cloud-build](https://cloud.google.com/architecture/architecture-for-mlops-using-tfx-kubeflow-pipelines-and-cloud-build)  
+[https://neptune.ai/mlops-tool-stack](https://neptune.ai/mlops-tool-stack)  
+[https://neptune.ai/blog/best-open-source-mlops-tools](https://neptune.ai/blog/best-open-source-mlops-tools)  
+[https://www.kubeflow.org/docs/components/pipelines/introduction/](https://www.kubeflow.org/docs/components/pipelines/introduction/)  
+[https://neptune.ai/blog/ways-ml-teams-use-ci-cd-in-production](https://neptune.ai/blog/ways-ml-teams-use-ci-cd-in-production)  
+[How does Ray compare to Apache Spark??](https://youtu.be/yLKHHiT2nWw)  
+[Introduction to Distributed Computing with the Ray Framework](https://youtu.be/cEF3ok1mSo0)  
+[Autoscaling machine learning APIs in Python with Ray](https://youtu.be/Xa_94PuUYQI)  
+[https://tryolabs.com/guides/retail-innovations-machine-learning](https://tryolabs.com/guides/retail-innovations-machine-learning)  
+[https://medium.com/@karl.utermohlen/4-applications-of-machine-learning-ml-in-retail-f637c2fe196a](https://medium.com/@karl.utermohlen/4-applications-of-machine-learning-ml-in-retail-f637c2fe196a)  
+[https://analyticsindiamag.com/how-can-ai-iot-data-help-streamline-vehicle-rental-services/](https://analyticsindiamag.com/how-can-ai-iot-data-help-streamline-vehicle-rental-services/)  
+[https://towardsdatascience.com/ai-and-real-state-renting-in-amsterdam-part-1-5fce18238dbc](https://towardsdatascience.com/ai-and-real-state-renting-in-amsterdam-part-1-5fce18238dbc)  
+[https://venturebeat.com/2021/11/04/using-ai-to-verify-renter-eligibility-and-risk/](https://venturebeat.com/2021/11/04/using-ai-to-verify-renter-eligibility-and-risk/)  
+
+
+[https://cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster)  
+
+[https://www.slideshare.net/databricks/migrating-apache-spark-ml-jobs-to-spark-tensorflow-on-kubeflow](https://www.slideshare.net/databricks/migrating-apache-spark-ml-jobs-to-spark-tensorflow-on-kubeflow)
+[https://learnopencv.com/pytorch-to-tensorflow-model-conversion/](https://learnopencv.com/pytorch-to-tensorflow-model-conversion/)  
+[https://neptune.ai/blog/moving-from-tensorflow-to-pytorch](https://neptune.ai/blog/moving-from-tensorflow-to-pytorch)  
+
+
+
+[https://cloud.google.com/dataproc/docs/tutorials/bigquery-sparkml](https://cloud.google.com/dataproc/docs/tutorials/bigquery-sparkml)  
+
+
