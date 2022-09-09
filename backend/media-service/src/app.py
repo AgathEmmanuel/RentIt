@@ -38,8 +38,16 @@ async def get_all_images():
     connection = psycopg2.connect(database="dbname", user="user", password="password", host="0.0.0.0")
     curs = connection.cursor()
     curs.execute("SELECT * FROM images ORDER BY id DESC")
-    rows = curs.fetchall()
-    return "your images"
+    objects = curs.fetchall()
+    images_list = []
+    for obj in objects:
+        images_list.append(
+            ImageModel( id=obj[0], image_name=obj[1], image_url=obj[2], is_present=obj[3])
+        )
+    curs.close()
+    connection.close()
+    return images_list
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=False)
