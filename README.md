@@ -222,8 +222,11 @@ RentPay { orderId : RefToOrder , status : Created|Failed|Completed , amount : nu
 [restful-microservices-using-node-js-and-express](https://www.coursera.org/specializations/restful-microservices-using-node-js-and-express)  
 [https://semaphoreci.medium.com/testing-strategies-for-microservices-d7ba104ebfdd](https://semaphoreci.medium.com/testing-strategies-for-microservices-d7ba104ebfdd)  
 [https://www.onixnet.com/insights/google-cloud-data-pipeline](https://www.onixnet.com/insights/google-cloud-data-pipeline)   
-
-
+[https://towardsdatascience.com/mlops-with-kubernetes-rabbitmq-and-fastapi-b67d82e35fa4](https://towardsdatascience.com/mlops-with-kubernetes-rabbitmq-and-fastapi-b67d82e35fa4)  
+[Event-Driven Microservice with RabbitMQ and FastAPI](https://youtu.be/syRmaDVv59k)  
+[Serving ML Model with Docker, RabbitMQ, FastAPI and Nginx](https://youtu.be/vFoRP6ztcrs)  
+[Event-driven applications: Apache Kafka and Python | DevNation Day 2021](https://youtu.be/-NzSVEIQsqE)  
+[Scalable & Event Driven Food Ordering App with Kafka & Python | System Design](https://youtu.be/qi7uR3ItaOY)  
 
 
 [https://analyticsindiamag.com/data-mesh-vs-data-fabric-whats-the-difference/](https://analyticsindiamag.com/data-mesh-vs-data-fabric-whats-the-difference/)  
